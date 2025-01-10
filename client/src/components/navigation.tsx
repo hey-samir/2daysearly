@@ -47,7 +47,7 @@ export default function Navigation() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <Image 
+            <img 
               src="/2 Days Early Logo 2025.png" 
               alt="2 days early logo"
               className="w-32 h-auto object-contain"

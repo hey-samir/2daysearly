@@ -1,15 +1,15 @@
-interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-  src: string;
-  alt: string;
-}
 
-export default function Image({ src, alt, className = "", ...props }: ImageProps) {
+import { cn } from "@/lib/utils";
+import NextImage from "next/image";
+import { ComponentProps } from "react";
+
+type ImageProps = ComponentProps<"img">;
+
+export default function Image({ className, alt, ...props }: ImageProps) {
   return (
     <img
-      src={src}
+      className={cn("", className)}
       alt={alt}
-      className={`w-auto ${className}`}
-      loading="lazy"
       {...props}
     />
   );
