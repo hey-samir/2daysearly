@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "@/components/ui/theme-toggle";
+import { scrollToElement, getActiveSection } from "@/lib/scroll";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,10 +16,24 @@ export default function Navigation() {
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       const scrolled = (winScroll / height) * 100;
       setScrollProgress(scrolled);
+      setActiveSection(getActiveSection());
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    scrollToElement(sectionId);
+    setIsOpen(false);
+  };
+
+  const navItems = [
+    { id: 'hero', label: 'Home' },
+    { id: 'mission', label: 'Mission' },
+    { id: 'principles', label: 'Principles' },
+    { id: 'portfolio', label: 'Portfolio' },
+  ];
 
   return (
     <>
@@ -47,10 +63,20 @@ export default function Navigation() {
               role="menubar"
               aria-label="Desktop navigation"
             >
-              <a href="#hero" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1" role="menuitem">Home</a>
-              <a href="#mission" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1" role="menuitem">Mission</a>
-              <a href="#principles" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1" role="menuitem">Principles</a>
-              <a href="#portfolio" className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1" role="menuitem">Portfolio</a>
+              {navItems.map(({ id, label }) => (
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  onClick={(e) => handleNavClick(e, id)}
+                  className={`text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors duration-200 ${
+                    activeSection === id ? 'text-primary dark:text-primary font-medium' : ''
+                  }`}
+                  role="menuitem"
+                  aria-current={activeSection === id ? 'page' : undefined}
+                >
+                  {label}
+                </a>
+              ))}
               <ThemeToggle />
             </div>
           </div>
@@ -79,10 +105,20 @@ export default function Navigation() {
           aria-label="Mobile navigation"
         >
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <a href="#hero" className="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary" role="menuitem" onClick={() => setIsOpen(false)}>Home</a>
-            <a href="#mission" className="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary" role="menuitem" onClick={() => setIsOpen(false)}>Mission</a>
-            <a href="#principles" className="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary" role="menuitem" onClick={() => setIsOpen(false)}>Principles</a>
-            <a href="#portfolio" className="block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary" role="menuitem" onClick={() => setIsOpen(false)}>Portfolio</a>
+            {navItems.map(({ id, label }) => (
+              <a
+                key={id}
+                href={`#${id}`}
+                onClick={(e) => handleNavClick(e, id)}
+                className={`block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary transition-colors duration-200 ${
+                  activeSection === id ? 'text-primary dark:text-primary font-medium' : ''
+                }`}
+                role="menuitem"
+                aria-current={activeSection === id ? 'page' : undefined}
+              >
+                {label}
+              </a>
+            ))}
             <div className="px-3 py-2">
               <ThemeToggle />
             </div>
