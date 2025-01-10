@@ -50,7 +50,7 @@ export default function Navigation() {
             <Image 
               src="/2 Days Early Logo 2025.png" 
               alt="2 days early logo"
-              className="w-32"
+              className="w-32 h-auto object-contain"
             />
             {/* Mobile menu button */}
             <button
