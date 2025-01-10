@@ -30,7 +30,7 @@ export default function Portfolio() {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center p-8">
               <p className="text-white text-center text-lg font-medium">
-                Empowering the next generation of financial services.
+                Making college savings simple and accessible for every family.
               </p>
             </div>
             <div className="h-full p-8 flex items-center justify-center">
@@ -51,7 +51,7 @@ export default function Portfolio() {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center p-8">
               <p className="text-white text-center text-lg font-medium">
-                Revolutionizing financial technology with innovative solutions.
+                AI-powered finance teams for modern businesses.
               </p>
             </div>
             <div className="h-full p-8 flex items-center justify-center">
@@ -72,7 +72,7 @@ export default function Portfolio() {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center p-8">
               <p className="text-white text-center text-lg font-medium">
-                Building the future of digital finance accessibility.
+                Simple and reliable automated testing for mobile engineering teams.
               </p>
             </div>
             <div className="h-full p-8 flex items-center justify-center">
