@@ -69,20 +69,26 @@ export default function Navigation() {
               role="menubar"
               aria-label="Desktop navigation"
             >
-              {navItems.map(({ id, label }) => (
-                <a
-                  key={id}
-                  href={`#${id}`}
-                  onClick={(e) => handleNavClick(e, id)}
-                  className={`text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors duration-200 ${
-                    activeSection === id ? 'text-primary dark:text-primary font-medium' : ''
-                  }`}
-                  role="menuitem"
-                  aria-current={activeSection === id ? 'page' : undefined}
-                >
-                  {label}
-                </a>
+              {navItems.map(({ id, label }, index) => (
+                <>
+                  <a
+                    key={id}
+                    href={`#${id}`}
+                    onClick={(e) => handleNavClick(e, id)}
+                    className={`text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors duration-200 ${
+                      activeSection === id ? 'text-primary dark:text-primary font-medium' : ''
+                    }`}
+                    role="menuitem"
+                    aria-current={activeSection === id ? 'page' : undefined}
+                  >
+                    {label}
+                  </a>
+                  {index < navItems.length - 1 && (
+                    <div className="h-4 w-px bg-gray-200 dark:bg-gray-700" />
+                  )}
+                </>
               ))}
+              <div className="h-4 w-px bg-gray-200 dark:bg-gray-700" />
               <ThemeToggle />
             </div>
           </div>
