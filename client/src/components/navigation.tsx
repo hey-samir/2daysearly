@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ExternalLink } from "lucide-react"; // Added ExternalLink import
 import Image from "@/components/ui/image";
 import ThemeToggle from "@/components/ui/theme-toggle";
 import { scrollToElement, getActiveSection } from "@/lib/scroll";
@@ -34,6 +34,8 @@ export default function Navigation() {
     { id: 'mission', label: 'Mission' },
     { id: 'principles', label: 'Principles' },
     { id: 'portfolio', label: 'Portfolio' },
+    { id: 'learn', label: 'Learn', href: 'https://2daysearly.notion.site/2-Days-Early-4ddd25db4cce419d8c25da7c0dfb7fc5' }, // Added Learn link
+    { id: 'join', label: 'Join', href: 'https://forms.gle/GwDSE3UQvPHQnxNR7' } // Added Join link
   ];
 
   return (
@@ -69,26 +71,28 @@ export default function Navigation() {
               role="menubar"
               aria-label="Desktop navigation"
             >
-              {navItems.map(({ id, label }, index) => (
+              {navItems.map(({ id, label, href }) => ( // Modified to include href
                 <>
                   <a
                     key={id}
-                    href={`#${id}`}
-                    onClick={(e) => handleNavClick(e, id)}
-                    className={`text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors duration-200 ${
+                    href={href ? href : `#${id}`} // Handle external links
+                    onClick={(e) => { if (!href) handleNavClick(e, id) }} // Only call handleNavClick for internal links
+                    target={href ? '_blank' : '_self'} // Set target for external links
+                    rel={href ? 'noopener noreferrer' : undefined} // Set rel for external links
+                    className={`text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors duration-200 inline-flex items-center gap-1 ${ // Added inline-flex and gap-1
                       activeSection === id ? 'text-primary dark:text-primary font-medium' : ''
                     }`}
                     role="menuitem"
                     aria-current={activeSection === id ? 'page' : undefined}
                   >
                     {label}
+                    {href && <ExternalLink className="h-3 w-3" />} {/* Add icon for external links */}
                   </a>
-                  {index < navItems.length - 1 && (
+                  {id !== 'join' && ( // Added condition to prevent extra divider after Join
                     <div className="h-4 w-px bg-gray-200 dark:bg-gray-700" />
                   )}
                 </>
               ))}
-              <div className="h-4 w-px bg-gray-200 dark:bg-gray-700" />
               <ThemeToggle />
             </div>
           </div>
@@ -117,18 +121,21 @@ export default function Navigation() {
           aria-label="Mobile navigation"
         >
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {navItems.map(({ id, label }) => (
+            {navItems.map(({ id, label, href }) => ( // Modified to include href
               <a
                 key={id}
-                href={`#${id}`}
-                onClick={(e) => handleNavClick(e, id)}
-                className={`block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary transition-colors duration-200 ${
+                href={href ? href : `#${id}`} // Handle external links
+                onClick={(e) => { if (!href) handleNavClick(e, id) }} // Only call handleNavClick for internal links
+                target={href ? '_blank' : '_self'} // Set target for external links
+                rel={href ? 'noopener noreferrer' : undefined} // Set rel for external links
+                className={`block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary transition-colors duration-200 inline-flex items-center gap-1 ${ // Added inline-flex and gap-1
                   activeSection === id ? 'text-primary dark:text-primary font-medium' : ''
                 }`}
                 role="menuitem"
                 aria-current={activeSection === id ? 'page' : undefined}
               >
                 {label}
+                {href && <ExternalLink className="h-3 w-3" />} {/* Add icon for external links */}
               </a>
             ))}
             <div className="px-3 py-2">
