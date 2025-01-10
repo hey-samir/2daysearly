@@ -28,7 +28,7 @@ export default function Portfolio() {
             <div className="relative p-8 border border-gray-100 dark:border-gray-700 rounded-lg">
               <div className="h-12 flex items-center justify-center mb-4">
                 <Image 
-                  src="/attached_assets/Juno.png"
+                  src="./Juno.png"
                   alt="JUNO logo"
                   className="h-8 object-contain"
                 />
@@ -56,7 +56,7 @@ export default function Portfolio() {
             <div className="relative p-8 border border-gray-100 dark:border-gray-700 rounded-lg">
               <div className="h-12 flex items-center justify-center mb-4">
                 <Image 
-                  src="/attached_assets/Waldo.png"
+                  src="./Waldo.png"
                   alt="waldo logo"
                   className="h-8 object-contain"
                 />
@@ -84,7 +84,7 @@ export default function Portfolio() {
             <div className="relative p-8 border border-gray-100 dark:border-gray-700 rounded-lg">
               <div className="h-12 flex items-center justify-center mb-4">
                 <Image 
-                  src="/attached_assets/Backpack.png"
+                  src="./Backpack.png"
                   alt="Backpack logo"
                   className="h-8 object-contain"
                 />
