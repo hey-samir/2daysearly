@@ -39,13 +39,13 @@ export default function Navigation() {
   return (
     <>
       <nav 
-        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-200 w-11/12 max-w-7xl ${
+        className={`fixed top-4 left-0 right-0 z-50 transition-all duration-200 ${
           isScrolled ? 'bg-white dark:bg-gray-900 shadow-lg' : 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm'
-        } rounded-full`}
+        }`}
         role="navigation"
         aria-label="Main navigation"
       >
-        <div className="px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto rounded-full px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <img 
               src="/2 Days Early Logo 2025.png" 
