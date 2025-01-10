@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import Image from "@/components/ui/image";
 import ThemeToggle from "@/components/ui/theme-toggle";
 import { scrollToElement, getActiveSection } from "@/lib/scroll";
 
@@ -46,6 +47,11 @@ export default function Navigation() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
+            <Image 
+              src="./2 Days Early Logo 2025.png" 
+              alt="2 days early logo"
+              className="w-32"
+            />
             {/* Mobile menu button */}
             <button
               onClick={() => setIsOpen(!isOpen)}

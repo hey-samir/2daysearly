@@ -7,11 +7,7 @@ export default function Hero() {
     <section id="hero" className="pt-24 md:pt-20 pb-16">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         <AnimatedSection className="text-center lg:text-left" delay={0.2}>
-          <Image 
-            src="./2 Days Early Logo 2025.png" 
-            alt="2 days early logo"
-            className="w-48 mb-8"
-          />
+          
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-gray-100">
             2 days early
           </h1>
