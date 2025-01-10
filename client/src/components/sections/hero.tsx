@@ -1,10 +1,11 @@
 import { Building2 } from "lucide-react";
+import AnimatedSection from "@/components/ui/animated-section";
 
 export default function Hero() {
   return (
     <section id="hero" className="pt-24 md:pt-20 pb-16">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-        <div className="text-center lg:text-left">
+        <AnimatedSection className="text-center lg:text-left">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900">
             2 days early
           </h1>
@@ -22,10 +23,10 @@ export default function Hero() {
               LEARN
             </a>
           </div>
-        </div>
-        <div className="flex justify-center">
+        </AnimatedSection>
+        <AnimatedSection className="flex justify-center">
           <Building2 className="w-48 h-48 md:w-64 md:h-64 text-primary" />
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );
