@@ -29,9 +29,6 @@ export default function Hero() {
             *To build the best community we can for our members, we're limiting access to current and former Chime employees only at this time
           </p>
         </AnimatedSection>
-        <AnimatedSection className="flex justify-center" delay={0.4}>
-          <Building2 className="w-48 h-48 md:w-64 md:h-64 text-primary" />
-        </AnimatedSection>
       </div>
     </section>
   );
