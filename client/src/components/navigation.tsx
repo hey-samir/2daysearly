@@ -90,7 +90,7 @@ export default function Navigation() {
 
         {/* Scroll Progress Bar */}
         <div 
-          className="h-0.5 bg-gray-100 dark:bg-gray-800"
+          className="h-0.5 bg-gray-100 dark:bg-gray-800 mx-4 rounded-full overflow-hidden"
           role="progressbar"
           aria-valuemin={0}
           aria-valuemax={100}
@@ -98,7 +98,7 @@ export default function Navigation() {
           aria-label="Page scroll progress"
         >
           <div
-            className="h-full bg-primary transition-all duration-200"
+            className="h-full bg-primary transition-all duration-200 rounded-full"
             style={{ width: `${scrollProgress}%` }}
           />
         </div>
