@@ -1,3 +1,4 @@
+
 import Navigation from "@/components/navigation";
 import Hero from "@/components/sections/hero";
 import Mission from "@/components/sections/mission";
@@ -11,7 +12,7 @@ export default function Home() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className="min-h-screen bg-white dark:bg-gray-900"
+      className="min-h-screen bg-white dark:bg-primary/10"
     >
       <Navigation />
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -20,6 +21,9 @@ export default function Home() {
         <Principles />
         <Portfolio />
       </main>
+      <footer className="text-center py-8 text-sm text-gray-600 dark:text-gray-400">
+        © Interspace Labs 2025. Built with Replit AI at the speed of thought
+      </footer>
     </motion.div>
   );
 }
