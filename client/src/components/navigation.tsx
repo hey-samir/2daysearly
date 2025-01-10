@@ -33,9 +33,7 @@ export default function Navigation() {
     { id: 'hero', label: 'Home' },
     { id: 'mission', label: 'Mission' },
     { id: 'principles', label: 'Principles' },
-    { id: 'portfolio', label: 'Portfolio' },
-    { id: 'learn', label: 'Learn', href: 'https://2daysearly.notion.site/2-Days-Early-4ddd25db4cce419d8c25da7c0dfb7fc5' }, // Added Learn link
-    { id: 'join', label: 'Join', href: 'https://forms.gle/GwDSE3UQvPHQnxNR7' } // Added Join link
+    { id: 'portfolio', label: 'Portfolio' }
   ];
 
   return (
