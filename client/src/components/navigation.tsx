@@ -70,9 +70,8 @@ export default function Navigation() {
               aria-label="Desktop navigation"
             >
               {navItems.map(({ id, label }) => (
-                <>
+                <React.Fragment key={id}>
                   <a
-                    key={id}
                     href={`#${id}`} 
                     onClick={(e) => handleNavClick(e, id)} 
                     className={`text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors duration-200 inline-flex items-center gap-1 ${
@@ -86,7 +85,7 @@ export default function Navigation() {
                   {id !== 'join' && (
                     <div className="h-4 w-px bg-gray-200 dark:bg-gray-700" />
                   )}
-                </>
+                </React.Fragment>
               ))}
               <ThemeToggle />
             </div>
