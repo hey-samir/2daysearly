@@ -50,7 +50,6 @@ export default function Portfolio() {
             className="group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-64 inline-flex items-center gap-1"
             role="listitem"
           >
-            <ExternalLink className="h-4 w-4 absolute top-4 right-4 text-gray-400 group-hover:text-white transition-colors duration-300" />
             <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center p-8">
               <p className="text-white text-center text-lg font-medium">
                 Modern banking for the crypto-native, with seamless on-ramps and a focus on user experience.
