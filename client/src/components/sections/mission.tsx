@@ -1,4 +1,3 @@
-
 import AnimatedSection from "@/components/ui/animated-section";
 
 export default function Mission() {
@@ -9,10 +8,10 @@ export default function Mission() {
           We are a community of <strong className="bg-primary/20">entrepreneurs, investors and operators</strong>. We have backgrounds in growth, product, engineering, operations, finance, analytics and more, determined to helping startups succeed like we did at Chime.
         </p>
         <p className="mt-4 md:mt-6 text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-          We aim to be the operator syndicate with <strong className="bg-primary/20">highest value per dollar invested</strong>. Companies we invest in get access to our experience network, and our commitment to empower impactful firms that provide better options for everyday people.
+          We aim to be the operator syndicate with <strong className="bg-primary/20">highest value per dollar invested.</strong> Companies we invest in get access to our experience network, and our commitment to empower impactful firms that provide better options for everyday people.
         </p>
         <p className="mt-4 md:mt-6 text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-          We love investing in amazing founders of all backgrounds, and we're especially committed to <strong className="bg-primary/20">invest in future companies founded by Chime alumni</strong>.
+          We love investing in amazing founders of all backgrounds, and we're especially committed to <strong className="bg-primary/20">invest in future companies founded by Chime alumni.</strong>
         </p>
       </AnimatedSection>
     </section>
