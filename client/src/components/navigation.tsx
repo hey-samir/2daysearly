@@ -39,8 +39,8 @@ export default function Navigation() {
   return (
     <>
       <nav 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
-          isScrolled ? 'bg-white shadow-lg' : 'bg-white'
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 bg-white ${
+          isScrolled ? 'shadow-lg' : ''
         } md:top-4 md:rounded-full`}
         role="navigation"
         aria-label="Main navigation"
@@ -94,7 +94,7 @@ export default function Navigation() {
 
         {/* Progress Bar - Desktop and Mobile (when menu closed) */}
         <div 
-          className={`h-0.5 bg-gray-100 dark:bg-gray-800 mx-6 rounded-full overflow-hidden ${isOpen ? 'md:block hidden' : 'block'}`}
+          className={`h-0.5 bg-gray-100 dark:bg-gray-800 mx-4 sm:mx-6 rounded-full overflow-hidden ${isOpen ? 'md:block hidden' : 'block'}`}
           role="progressbar"
           aria-valuemin={0}
           aria-valuemax={100}
