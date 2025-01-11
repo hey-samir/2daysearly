@@ -69,24 +69,21 @@ export default function Navigation() {
               role="menubar"
               aria-label="Desktop navigation"
             >
-              {navItems.map(({ id, label, href }) => ( // Modified to include href
+              {navItems.map(({ id, label }) => (
                 <>
                   <a
                     key={id}
-                    href={href ? href : `#${id}`} // Handle external links
-                    onClick={(e) => { if (!href) handleNavClick(e, id) }} // Only call handleNavClick for internal links
-                    target={href ? '_blank' : '_self'} // Set target for external links
-                    rel={href ? 'noopener noreferrer' : undefined} // Set rel for external links
-                    className={`text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors duration-200 inline-flex items-center gap-1 ${ // Added inline-flex and gap-1
+                    href={`#${id}`} 
+                    onClick={(e) => handleNavClick(e, id)} 
+                    className={`text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors duration-200 inline-flex items-center gap-1 ${
                       activeSection === id ? 'text-primary dark:text-primary font-medium' : ''
                     }`}
                     role="menuitem"
                     aria-current={activeSection === id ? 'page' : undefined}
                   >
                     {label}
-                    {href && <ExternalLink className="h-3 w-3" />} {/* Add icon for external links */}
                   </a>
-                  {id !== 'join' && ( // Added condition to prevent extra divider after Join
+                  {id !== 'join' && (
                     <div className="h-4 w-px bg-gray-200 dark:bg-gray-700" />
                   )}
                 </>
@@ -119,21 +116,18 @@ export default function Navigation() {
           aria-label="Mobile navigation"
         >
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {navItems.map(({ id, label, href }) => ( // Modified to include href
+            {navItems.map(({ id, label }) => (
               <a
                 key={id}
-                href={href ? href : `#${id}`} // Handle external links
-                onClick={(e) => { if (!href) handleNavClick(e, id) }} // Only call handleNavClick for internal links
-                target={href ? '_blank' : '_self'} // Set target for external links
-                rel={href ? 'noopener noreferrer' : undefined} // Set rel for external links
-                className={`block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary transition-colors duration-200 inline-flex items-center gap-1 ${ // Added inline-flex and gap-1
+                href={`#${id}`} 
+                onClick={(e) => handleNavClick(e, id)} 
+                className={`block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary transition-colors duration-200 inline-flex items-center gap-1 ${
                   activeSection === id ? 'text-primary dark:text-primary font-medium' : ''
                 }`}
                 role="menuitem"
                 aria-current={activeSection === id ? 'page' : undefined}
               >
                 {label}
-                {href && <ExternalLink className="h-3 w-3" />} {/* Add icon for external links */}
               </a>
             ))}
             <div className="px-3 py-2">
