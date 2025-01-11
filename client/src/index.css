@@ -74,8 +74,12 @@
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
+  .container {
+    @apply max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
   section {
-    @apply w-screen;
+    @apply w-full;
   }
 
   ::selection {

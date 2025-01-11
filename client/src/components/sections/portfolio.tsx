@@ -6,10 +6,10 @@ export default function Portfolio() {
   return (
     <section 
       id="portfolio" 
-      className="py-8 md:py-12 bg-gray-50 dark:bg-primary/5"
+      className="py-8 md:py-12 bg-gray-50 dark:bg-primary/5 w-full overflow-hidden"
       aria-labelledby="portfolio-heading"
     >
-      <AnimatedSection>
+      <AnimatedSection className="container">
         <h2 
           id="portfolio-heading" 
           className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8"
