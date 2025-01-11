@@ -25,7 +25,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="text-primary hover:text-primary/90 underline"
               >
-                Replit AI
+                Replit.com
               </a>
             </p>
           </div>
