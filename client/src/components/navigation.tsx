@@ -39,9 +39,9 @@ export default function Navigation() {
   return (
     <>
       <nav 
-        className={`fixed top-4 left-0 right-0 z-50 transition-all duration-200 ${
-          isScrolled ? 'bg-white shadow-lg' : 'bg-white/80 backdrop-blur-sm'
-        } rounded-full`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
+          isScrolled ? 'bg-white shadow-lg' : 'bg-white'
+        } md:top-4 md:rounded-full`}
         role="navigation"
         aria-label="Main navigation"
       >
@@ -55,7 +55,7 @@ export default function Navigation() {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary"
+              className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-white hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary"
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
               aria-label={isOpen ? "Close main menu" : "Open main menu"}

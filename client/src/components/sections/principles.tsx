@@ -5,7 +5,7 @@ export default function Principles() {
   return (
     <section id="principles" className="py-8 md:py-12">
       <AnimatedSection>
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-8">
           Operating Principles
         </h2>
         <div className="space-y-6">
