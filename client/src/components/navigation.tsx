@@ -92,9 +92,9 @@ export default function Navigation() {
           </div>
         </div>
 
-        {/* Scroll Progress Bar */}
+        {/* Progress Bar - Desktop and Mobile (when menu closed) */}
         <div 
-          className="h-0.5 bg-gray-100 dark:bg-gray-800 mx-6 rounded-full overflow-hidden"
+          className={`h-0.5 bg-gray-100 dark:bg-gray-800 mx-6 rounded-full overflow-hidden ${isOpen ? 'md:block hidden' : 'block'}`}
           role="progressbar"
           aria-valuemin={0}
           aria-valuemax={100}
@@ -137,6 +137,22 @@ export default function Navigation() {
               <ThemeToggle />
             </div>
           </div>
+          {/* Progress Bar - Mobile (when menu open) */}
+          {isOpen && (
+            <div 
+              className="h-0.5 bg-gray-100 dark:bg-gray-800 mx-6 rounded-full overflow-hidden md:hidden"
+              role="progressbar"
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-valuenow={Math.round(scrollProgress)}
+              aria-label="Page scroll progress"
+            >
+              <div
+                className="h-full bg-primary transition-all duration-200 rounded-full"
+                style={{ width: `${scrollProgress}%` }}
+              />
+            </div>
+          )}
         </div>
       </nav>
     </>
