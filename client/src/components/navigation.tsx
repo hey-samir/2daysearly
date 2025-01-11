@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Menu, X, ExternalLink } from "lucide-react"; // Added ExternalLink import
 import Image from "@/components/ui/image";
 import ThemeToggle from "@/components/ui/theme-toggle";
