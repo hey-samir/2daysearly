@@ -22,7 +22,7 @@ export default function Home() {
         <Portfolio />
       </main>
       <footer className="text-center py-8 text-sm text-gray-600 dark:text-gray-400">
-        © Interspace Labs 2025. Built with Replit AI at the speed of thought
+        © Interspace Labs 2025. Built with <a href="https://replit.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/90 underline">Replit.com</a> at the speed of thought
       </footer>
     </motion.div>
   );
