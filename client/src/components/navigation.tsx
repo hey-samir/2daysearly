@@ -130,7 +130,7 @@ export default function Navigation() {
                 {label}
               </a>
             ))}
-            <div className="px-3 py-2">
+            <div className="flex items-center px-3 py-2">
               <ThemeToggle />
             </div>
           </div>
