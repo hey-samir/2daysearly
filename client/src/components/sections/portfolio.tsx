@@ -1,4 +1,3 @@
-
 import AnimatedSection from "@/components/ui/animated-section";
 import Image from "@/components/ui/image";
 import { ExternalLink } from "lucide-react";
@@ -26,7 +25,7 @@ export default function Portfolio() {
             href="https://www.backpack529.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-64"
+            className="group relative bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-64"
             role="listitem"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center p-8">
@@ -47,7 +46,7 @@ export default function Portfolio() {
             href="https://juno.finance/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-64 inline-flex items-center gap-1"
+            className="group relative bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-64 inline-flex items-center gap-1"
             role="listitem"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center p-8">
@@ -68,7 +67,7 @@ export default function Portfolio() {
             href="https://www.waldo.ai/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-64"
+            className="group relative bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-64"
             role="listitem"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center p-8">

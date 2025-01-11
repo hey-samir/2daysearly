@@ -70,8 +70,12 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased transition-colors duration-300 font-sans;
+    @apply bg-background text-foreground antialiased transition-colors duration-300 font-sans overflow-x-hidden;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  section {
+    @apply w-screen;
   }
 
   ::selection {
