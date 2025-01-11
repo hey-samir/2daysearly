@@ -31,7 +31,7 @@ export default function Portfolio() {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center p-8">
               <p className="text-white text-center text-lg font-medium">
-                Making college savings simple and accessible for every family.
+                Simplifying 529 plan management for families and advisors with innovative payment solutions.
               </p>
             </div>
             <div className="h-full p-8 flex items-center justify-center">
@@ -53,7 +53,7 @@ export default function Portfolio() {
             <ExternalLink className="h-4 w-4 absolute top-4 right-4 text-gray-400 group-hover:text-white transition-colors duration-300" />
             <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center p-8">
               <p className="text-white text-center text-lg font-medium">
-                AI-powered finance teams for modern businesses.
+                Modern banking for the crypto-native, with seamless on-ramps and a focus on user experience.
               </p>
             </div>
             <div className="h-full p-8 flex items-center justify-center">
@@ -74,7 +74,7 @@ export default function Portfolio() {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center p-8">
               <p className="text-white text-center text-lg font-medium">
-                Simple and reliable automated testing for mobile engineering teams.
+                AI-powered fraud prevention that automates compliance and keeps your business safe.
               </p>
             </div>
             <div className="h-full p-8 flex items-center justify-center">
