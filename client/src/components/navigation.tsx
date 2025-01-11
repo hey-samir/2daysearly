@@ -116,21 +116,25 @@ export default function Navigation() {
           aria-label="Mobile navigation"
         >
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {navItems.map(({ id, label }) => (
-              <a
-                key={id}
-                href={`#${id}`} 
-                onClick={(e) => handleNavClick(e, id)} 
-                className={`block px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary transition-colors duration-200 inline-flex items-center gap-1 ${
-                  activeSection === id ? 'text-primary dark:text-primary font-medium' : ''
-                }`}
-                role="menuitem"
-                aria-current={activeSection === id ? 'page' : undefined}
-              >
-                {label}
-              </a>
-            ))}
-            <div className="flex items-center px-3 py-2">
+            <div className="flex flex-row flex-wrap items-center gap-2">
+              {navItems.map(({ id, label }) => (
+                <div key={id} className="flex items-center gap-2">
+                  <a
+                    href={`#${id}`} 
+                    onClick={(e) => handleNavClick(e, id)} 
+                    className={`text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors duration-200 inline-flex items-center gap-1 ${
+                      activeSection === id ? 'text-primary dark:text-primary font-medium' : ''
+                    }`}
+                    role="menuitem"
+                    aria-current={activeSection === id ? 'page' : undefined}
+                  >
+                    {label}
+                  </a>
+                  {id !== 'portfolio' && (
+                    <div className="h-4 w-px bg-gray-200 dark:bg-gray-700" />
+                  )}
+                </div>
+              ))}
               <ThemeToggle />
             </div>
           </div>
