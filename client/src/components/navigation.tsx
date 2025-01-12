@@ -24,8 +24,7 @@ export default function Navigation() {
   };
 
   const navItems = [
-    { id: 'hero', label: 'Home' },
-    { id: 'mission', label: 'Mission' },
+    { id: 'purpose', label: 'Purpose' },
     { id: 'principles', label: 'Principles' },
     { id: 'portfolio', label: 'Portfolio' }
   ];
@@ -46,7 +45,11 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <a href="#" className="flex-shrink-0">
+          <a 
+            href="#hero" 
+            onClick={(e) => handleNavClick(e, 'hero')} 
+            className="flex-shrink-0"
+          >
             <img 
               src="/2 Days Early logo.png" 
               alt="2 Days Early" 
