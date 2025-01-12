@@ -67,7 +67,7 @@ export default function Navigation() {
                   key={id}
                   href={`#${id}`} 
                   onClick={(e) => handleNavClick(e, id)} 
-                  className={`relative text-gray-700 dark:text-gray-700 hover:text-primary dark:hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors duration-200 ${
+                  className={`relative text-gray-700 dark:text-gray-700 hover:text-primary dark:hover:text-primary rounded-md px-2 py-1 transition-colors duration-200 ${
                     activeSection === id ? 'text-primary dark:text-primary font-medium after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary' : ''
                   }`}
                   role="menuitem"
@@ -130,7 +130,7 @@ export default function Navigation() {
                 key={id}
                 href={`#${id}`} 
                 onClick={(e) => handleNavClick(e, id)} 
-                className={`relative text-gray-700 dark:text-gray-700 hover:text-primary dark:hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors duration-200 ${
+                className={`relative text-gray-700 dark:text-gray-700 hover:text-primary dark:hover:text-primary rounded-md px-2 py-1 transition-colors duration-200 ${
                   activeSection === id ? 'text-primary dark:text-primary font-medium after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary' : ''
                 }`}
                 role="menuitem"
