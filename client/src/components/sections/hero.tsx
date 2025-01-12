@@ -10,7 +10,7 @@ export default function Hero() {
             <img 
               src={encodeURI('/2 Days Early Logo 2025 vF.png')}
               alt="2 days early logo"
-              className="w-full h-auto max-w-[700px] mx-auto"
+              className="w-full h-auto max-w-[500px] mx-auto"
             />
           </div>
         </AnimatedSection>
