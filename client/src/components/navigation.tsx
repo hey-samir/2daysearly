@@ -49,7 +49,7 @@ export default function Navigation() {
           <a 
             href="#hero" 
             onClick={(e) => handleNavClick(e, 'hero')} 
-            className="flex-shrink-0"
+            className="flex-shrink-0 transform hover:scale-105 transition-transform duration-200"
           >
             <img 
               src="/2 Days Early logo.png" 
@@ -67,7 +67,7 @@ export default function Navigation() {
                   key={id}
                   href={`#${id}`} 
                   onClick={(e) => handleNavClick(e, id)} 
-                  className={`relative text-gray-700 dark:text-gray-700 hover:text-primary dark:hover:text-primary rounded-md px-2 py-1 transition-colors duration-200 ${
+                  className={`relative text-gray-700 dark:text-gray-700 hover:text-primary dark:hover:text-primary rounded-md px-2 py-1 transition-all duration-200 transform hover:-translate-y-0.5 ${
                     activeSection === id ? 'text-primary dark:text-primary font-medium after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary' : ''
                   }`}
                   role="menuitem"
@@ -92,7 +92,7 @@ export default function Navigation() {
                     primary
                       ? 'bg-primary text-white hover:bg-primary/90'
                       : 'bg-gray-100 text-gray-900 dark:bg-gray-100 dark:text-gray-900 hover:bg-gray-200 dark:hover:bg-gray-200'
-                  } px-3 py-1.5 rounded-md text-sm font-medium inline-flex items-center gap-1`}
+                  } px-3 py-1.5 rounded-md text-sm font-medium inline-flex items-center gap-1 transition-all duration-200 transform hover:-translate-y-0.5`}
                 >
                   {label} <ExternalLink className="h-3 w-3" />
                 </a>
@@ -105,7 +105,7 @@ export default function Navigation() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-700 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"
+            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-700 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-100 transition-colors duration-200"
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
             aria-label={isOpen ? "Close main menu" : "Open main menu"}
@@ -130,7 +130,7 @@ export default function Navigation() {
                 key={id}
                 href={`#${id}`} 
                 onClick={(e) => handleNavClick(e, id)} 
-                className={`relative text-gray-700 dark:text-gray-700 hover:text-primary dark:hover:text-primary rounded-md px-2 py-1 transition-colors duration-200 ${
+                className={`relative text-gray-700 dark:text-gray-700 hover:text-primary dark:hover:text-primary rounded-md px-2 py-1 transition-all duration-200 transform hover:-translate-y-0.5 ${
                   activeSection === id ? 'text-primary dark:text-primary font-medium after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary' : ''
                 }`}
                 role="menuitem"
@@ -155,7 +155,7 @@ export default function Navigation() {
                   primary
                     ? 'bg-primary text-white hover:bg-primary/90'
                     : 'bg-gray-100 text-gray-900 dark:bg-gray-100 dark:text-gray-900 hover:bg-gray-200 dark:hover:bg-gray-200'
-                } px-3 py-1.5 rounded-md text-sm font-medium inline-flex items-center gap-1 w-full justify-center`}
+                } px-3 py-1.5 rounded-md text-sm font-medium inline-flex items-center gap-1 w-full justify-center transition-all duration-200 transform hover:-translate-y-0.5`}
               >
                 {label} <ExternalLink className="h-3 w-3" />
               </a>
