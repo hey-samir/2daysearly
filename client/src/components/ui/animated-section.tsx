@@ -1,25 +1,53 @@
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, Variants } from "framer-motion";
 import { useRef } from "react";
 
 interface AnimatedSectionProps {
   children: React.ReactNode;
   className?: string;
   delay?: number;
+  variant?: "fadeIn" | "slideUp" | "scaleUp";
+  duration?: number;
 }
 
-export default function AnimatedSection({ children, className = "", delay = 0 }: AnimatedSectionProps) {
+const variants: Record<string, Variants> = {
+  fadeIn: {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 }
+  },
+  slideUp: {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  },
+  scaleUp: {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: { opacity: 1, scale: 1 }
+  }
+};
+
+export default function AnimatedSection({ 
+  children, 
+  className = "", 
+  delay = 0,
+  variant = "slideUp",
+  duration = 0.6 
+}: AnimatedSectionProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { 
+    once: true, 
+    margin: "-100px",
+    amount: 0.3
+  });
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={variants[variant]}
       transition={{ 
-        duration: 0.6, 
-        ease: "easeOut",
-        delay: delay,
+        duration, 
+        ease: [0.25, 0.1, 0.25, 1],
+        delay 
       }}
       className={className}
     >
