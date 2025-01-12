@@ -1,18 +1,24 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import type { Server } from "http";
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use((req, res, next) => {
+interface ExtendedResponse extends Response {
+  json: (body: any, ...args: any[]) => Response;
+}
+
+// Middleware to log API requests
+app.use((req: Request, res: Response, next: NextFunction) => {
   const start = Date.now();
   const path = req.path;
   let capturedJsonResponse: Record<string, any> | undefined = undefined;
 
   const originalResJson = res.json;
-  res.json = function (bodyJson, ...args) {
+  (res as ExtendedResponse).json = function (bodyJson: any, ...args: any[]) {
     capturedJsonResponse = bodyJson;
     return originalResJson.apply(res, [bodyJson, ...args]);
   };
@@ -36,44 +42,71 @@ app.use((req, res, next) => {
   next();
 });
 
-(async () => {
-  const server = registerRoutes(app);
-
-  app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
-    const status = err.status || err.statusCode || 500;
-    const message = err.message || "Internal Server Error";
-
-    res.status(status).json({ message });
-    throw err;
-  });
-
-  // importantly only setup vite in development and after
-  // setting up all the other routes so the catch-all route
-  // doesn't interfere with the other routes
-  if (app.get("env") === "development") {
-    await setupVite(app, server);
-  } else {
-    serveStatic(app);
+class ServerError extends Error {
+  constructor(
+    public statusCode: number,
+    message: string
+  ) {
+    super(message);
+    this.name = 'ServerError';
   }
+}
 
-  // ALWAYS serve the app on port 5000
-  // this serves both the API and the client
-  const PORT = process.env.PORT || 5000;
-  const HOST = "0.0.0.0";
-  server.listen(PORT, HOST, () => {
-    log(`Server running at http://${HOST}:${PORT}`);
-    log('Server is ready to handle requests');
-  });
-  
-  // Handle server errors
-  server.on('error', (error: Error) => {
+// Error handling middleware
+const errorHandler = (
+  err: Error,
+  _req: Request,
+  res: Response,
+  _next: NextFunction
+) => {
+  if (err instanceof ServerError) {
+    res.status(err.statusCode).json({ message: err.message });
+  } else {
+    const status = 500;
+    const message = err.message || "Internal Server Error";
+    res.status(status).json({ message });
+  }
+  console.error(err);
+};
+
+const startServer = async () => {
+  try {
+    const server = registerRoutes(app);
+
+    app.use(errorHandler);
+
+    if (app.get("env") === "development") {
+      await setupVite(app, server);
+    } else {
+      serveStatic(app);
+    }
+
+    const PORT = process.env.PORT || 5000;
+    server.listen(PORT, () => {
+      log(`Server running at http://localhost:${PORT}`);
+      log('Server is ready to handle requests');
+    });
+
+    setupServerErrorHandling(server);
+  } catch (error) {
+    console.error('Failed to start server:', error);
+    process.exit(1);
+  }
+};
+
+const setupServerErrorHandling = (server: Server) => {
+  server.on('error', (error: NodeJS.ErrnoException) => {
     log(`Server error: ${error.message}`);
-    if ((error as any).code === 'EADDRINUSE') {
+    if (error.code === 'EADDRINUSE') {
       log('Address already in use, retrying...');
       setTimeout(() => {
         server.close();
-        server.listen(PORT, HOST);
+        server.listen(process.env.PORT || 5000);
       }, 1000);
     }
   });
-})();
+};
+
+startServer();
+
+export { app };
