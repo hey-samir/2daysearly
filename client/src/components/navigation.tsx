@@ -30,9 +30,9 @@ export default function Navigation() {
   ];
 
   const actionButtons = [
-    { href: "mailto:pitch@daysearly.com", label: "PITCH", primary: true },
+    { href: "https://interspace.samir.xyz/p/101-everything-you-wanted-to-know", label: "LEARN", primary: false },
     { href: "https://tally.so/r/nP1v8e", label: "JOIN*", primary: false },
-    { href: "https://interspace.samir.xyz/p/101-everything-you-wanted-to-know", label: "LEARN", primary: false }
+    { href: "mailto:pitch@daysearly.com", label: "PITCH", primary: true }
   ];
 
   return (
