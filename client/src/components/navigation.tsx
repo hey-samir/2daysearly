@@ -38,9 +38,9 @@ export default function Navigation() {
 
   return (
     <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm ${
-        isScrolled ? 'shadow-sm' : ''
-      } md:top-4 md:mx-4 md:rounded-full`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 bg-[#baf5da]/80 backdrop-blur-sm
+        ${isScrolled ? 'shadow-sm' : ''}
+        md:top-4 md:mx-4 md:rounded-full`}
       role="navigation"
       aria-label="Main navigation"
     >
@@ -118,7 +118,7 @@ export default function Navigation() {
       {/* Mobile menu panel */}
       <div 
         id="mobile-menu"
-        className={`md:hidden ${isOpen ? 'block' : 'hidden'} bg-white dark:bg-gray-900 shadow-lg`}
+        className={`md:hidden ${isOpen ? 'block' : 'hidden'} bg-[#baf5da]/95 backdrop-blur-sm`}
         role="menu"
         aria-label="Mobile navigation"
       >
