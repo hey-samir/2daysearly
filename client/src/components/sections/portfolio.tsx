@@ -1,5 +1,4 @@
 import AnimatedSection from "@/components/ui/animated-section";
-import Image from "@/components/ui/image";
 import { ExternalLink } from "lucide-react";
 
 export default function Portfolio() {
@@ -18,7 +17,7 @@ export default function Portfolio() {
             We're proud to invest our time and money in operators at these startups:
           </h2>
           <div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-3 gap-8"
             role="list"
             aria-label="Portfolio companies"
           >
@@ -35,7 +34,7 @@ export default function Portfolio() {
                 </p>
               </div>
               <div className="h-full p-8 flex items-center justify-center">
-                <Image 
+                <img 
                   src="./Backpack.png"
                   alt="Backpack logo"
                   className="w-full h-full object-contain"
@@ -56,7 +55,7 @@ export default function Portfolio() {
                 </p>
               </div>
               <div className="h-full p-8 flex items-center justify-center">
-                <Image 
+                <img 
                   src="./Juno.png"
                   alt="JUNO logo"
                   className="w-full h-full object-contain"
@@ -77,7 +76,7 @@ export default function Portfolio() {
                 </p>
               </div>
               <div className="h-full p-8 flex items-center justify-center">
-                <Image 
+                <img 
                   src="./Waldo.png"
                   alt="waldo logo"
                   className="w-full h-full object-contain"

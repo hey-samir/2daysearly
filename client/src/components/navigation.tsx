@@ -51,8 +51,12 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <a href="#" className="flex-shrink-0 text-2xl font-bold text-gray-900 dark:text-white">
-            2 days early
+          <a href="#" className="flex-shrink-0">
+            <img 
+              src="/2 Days Early logo.png" 
+              alt="2 Days Early" 
+              className="h-8 w-auto"
+            />
           </a>
 
           {/* Desktop menu */}
@@ -61,6 +65,7 @@ export default function Navigation() {
             <div className="flex items-center gap-2 mr-4">
               {navItems.map(({ id, label }) => (
                 <a
+                    key={id}
                     href={`#${id}`} 
                     onClick={(e) => handleNavClick(e, id)} 
                     className={`text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors duration-200 ${
@@ -88,7 +93,7 @@ export default function Navigation() {
                       : 'bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700'
                   } px-3 py-1.5 rounded-md text-sm font-medium inline-flex items-center gap-1`}
                 >
-                  {label} <ExternalLink className="h-3 w-3" />
+                  {label === 'JOIN' ? 'JOIN*' : label} <ExternalLink className="h-3 w-3" />
                 </a>
               ))}
               <ThemeToggle />
@@ -163,7 +168,7 @@ export default function Navigation() {
                     : 'bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700'
                 } px-3 py-1.5 rounded-md text-sm font-medium inline-flex items-center gap-1 w-full justify-center`}
               >
-                {label} <ExternalLink className="h-3 w-3" />
+                {label === 'JOIN' ? 'JOIN*' : label} <ExternalLink className="h-3 w-3" />
               </a>
             ))}
             <div className="flex justify-center w-full pt-2">

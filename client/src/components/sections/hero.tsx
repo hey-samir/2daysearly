@@ -7,16 +7,16 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <AnimatedSection className="text-center lg:text-left" delay={0.2}>
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-              2 days early
-            </h1>
             <div className="mt-8">
               <img 
                 src="/2 Days Early Logo 2025.png" 
                 alt="2 days early logo"
-                className="w-64 h-auto mx-auto lg:mx-0"
+                className="w-[450px] h-auto mx-auto lg:mx-0"
               />
             </div>
+            <h2 className="mt-6 text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300">
+              By operators. For operators.
+            </h2>
           </AnimatedSection>
         </div>
       </div>
