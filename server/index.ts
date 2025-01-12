@@ -62,5 +62,18 @@ app.use((req, res, next) => {
   const HOST = "0.0.0.0";
   server.listen(PORT, HOST, () => {
     log(`Server running at http://${HOST}:${PORT}`);
+    log('Server is ready to handle requests');
+  });
+  
+  // Handle server errors
+  server.on('error', (error: Error) => {
+    log(`Server error: ${error.message}`);
+    if ((error as any).code === 'EADDRINUSE') {
+      log('Address already in use, retrying...');
+      setTimeout(() => {
+        server.close();
+        server.listen(PORT, HOST);
+      }, 1000);
+    }
   });
 })();
