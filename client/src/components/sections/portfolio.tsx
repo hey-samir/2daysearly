@@ -8,15 +8,15 @@ export default function Portfolio() {
       className="py-8 md:py-12 bg-gray-50 dark:bg-primary/5"
       aria-labelledby="portfolio-heading"
     >
-      <AnimatedSection className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl lg:px-0">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-0">
+        <AnimatedSection>
           <h2 
             id="portfolio-heading" 
             className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-8"
           >
             We're proud to invest our time and money in operators at these startups:
           </h2>
-        </div>
+        </AnimatedSection>
         <div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12"
           role="list"
@@ -85,7 +85,7 @@ export default function Portfolio() {
             </div>
           </a>
         </div>
-      </AnimatedSection>
+      </div>
     </section>
   );
 }

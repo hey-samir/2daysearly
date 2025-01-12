@@ -2,7 +2,7 @@ import AnimatedSection from "@/components/ui/animated-section";
 
 export default function Principles() {
   return (
-    <section id="principles" className="py-8 md:py-12 bg-white dark:bg-primary/5">
+    <section id="principles" className="py-8 md:py-12 bg-white dark:bg-primary/10">
       <AnimatedSection className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-0">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-8">
           Operating Principles
