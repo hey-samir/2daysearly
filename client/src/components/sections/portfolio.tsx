@@ -8,7 +8,7 @@ export default function Portfolio() {
       className="py-8 md:py-12 bg-gray-50 dark:bg-primary/5"
       aria-labelledby="portfolio-heading"
     >
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-0">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <h2 
             id="portfolio-heading" 
