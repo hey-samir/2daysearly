@@ -9,7 +9,7 @@ export default function Hero() {
           <AnimatedSection className="text-center lg:text-left w-full" delay={0.2}>
             <div className="mt-8 max-w-full">
               <img 
-                src="/2 Days Early logo.png" 
+                src="/2 Days Early Logo 2025 vF.png"
                 alt="2 days early logo"
                 className="w-full h-auto max-w-[700px] mx-auto lg:mx-0"
               />
