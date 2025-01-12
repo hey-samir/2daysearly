@@ -48,9 +48,9 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           <a href="#" className="flex-shrink-0">
             <img 
-              src="/2 Days Early Logo 2025.png" 
+              src="/2 Days Early logo.png" 
               alt="2 Days Early" 
-              className="h-8 w-auto"
+              className="h-10 w-10 rounded-full object-cover bg-white"
             />
           </a>
 
