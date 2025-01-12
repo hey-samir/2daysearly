@@ -38,7 +38,7 @@ export default function Navigation() {
 
   return (
     <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 bg-[#baf5da]/80 backdrop-blur-sm
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 bg-[#baf5da]/80 dark:bg-white/80 backdrop-blur-sm
         ${isScrolled ? 'shadow-sm' : ''}
         md:top-4 md:mx-4 md:rounded-full`}
       role="navigation"
@@ -67,7 +67,7 @@ export default function Navigation() {
                   key={id}
                   href={`#${id}`} 
                   onClick={(e) => handleNavClick(e, id)} 
-                  className={`relative text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors duration-200 ${
+                  className={`relative text-gray-700 dark:text-gray-700 hover:text-primary dark:hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors duration-200 ${
                     activeSection === id ? 'text-primary dark:text-primary font-medium after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary' : ''
                   }`}
                   role="menuitem"
@@ -91,7 +91,7 @@ export default function Navigation() {
                   className={`${
                     primary
                       ? 'bg-primary text-white hover:bg-primary/90'
-                      : 'bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700'
+                      : 'bg-gray-100 text-gray-900 dark:bg-gray-100 dark:text-gray-900 hover:bg-gray-200 dark:hover:bg-gray-200'
                   } px-3 py-1.5 rounded-md text-sm font-medium inline-flex items-center gap-1`}
                 >
                   {label} <ExternalLink className="h-3 w-3" />
@@ -105,7 +105,7 @@ export default function Navigation() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-white hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary"
+            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-700 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
             aria-label={isOpen ? "Close main menu" : "Open main menu"}
@@ -118,7 +118,7 @@ export default function Navigation() {
       {/* Mobile menu panel */}
       <div 
         id="mobile-menu"
-        className={`md:hidden ${isOpen ? 'block' : 'hidden'} bg-[#baf5da]/95 backdrop-blur-sm`}
+        className={`md:hidden ${isOpen ? 'block' : 'hidden'} bg-[#baf5da]/95 dark:bg-white/95 backdrop-blur-sm`}
         role="menu"
         aria-label="Mobile navigation"
       >
@@ -130,7 +130,7 @@ export default function Navigation() {
                 key={id}
                 href={`#${id}`} 
                 onClick={(e) => handleNavClick(e, id)} 
-                className={`relative text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors duration-200 ${
+                className={`relative text-gray-700 dark:text-gray-700 hover:text-primary dark:hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors duration-200 ${
                   activeSection === id ? 'text-primary dark:text-primary font-medium after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary' : ''
                 }`}
                 role="menuitem"
@@ -154,7 +154,7 @@ export default function Navigation() {
                 className={`${
                   primary
                     ? 'bg-primary text-white hover:bg-primary/90'
-                    : 'bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700'
+                    : 'bg-gray-100 text-gray-900 dark:bg-gray-100 dark:text-gray-900 hover:bg-gray-200 dark:hover:bg-gray-200'
                 } px-3 py-1.5 rounded-md text-sm font-medium inline-flex items-center gap-1 w-full justify-center`}
               >
                 {label} <ExternalLink className="h-3 w-3" />
