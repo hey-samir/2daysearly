@@ -9,7 +9,7 @@ export default function Portfolio() {
       aria-labelledby="portfolio-heading"
     >
       <AnimatedSection className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl lg:px-0">
           <h2 
             id="portfolio-heading" 
             className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-8"
@@ -36,7 +36,7 @@ export default function Portfolio() {
             </div>
             <div className="h-full p-8 flex items-center justify-center">
               <img 
-                src="./Backpack.png"
+                src="/Backpack.png"
                 alt="Backpack logo"
                 className="w-full h-full object-contain"
               />
@@ -57,7 +57,7 @@ export default function Portfolio() {
             </div>
             <div className="h-full p-8 flex items-center justify-center">
               <img 
-                src="./Juno.png"
+                src="/Juno.png"
                 alt="JUNO logo"
                 className="w-full h-full object-contain"
               />
@@ -78,7 +78,7 @@ export default function Portfolio() {
             </div>
             <div className="h-full p-8 flex items-center justify-center">
               <img 
-                src="./Waldo.png"
+                src="/Waldo.png"
                 alt="waldo logo"
                 className="w-full h-full object-contain"
               />
