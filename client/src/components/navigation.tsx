@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Menu, X, ExternalLink } from "lucide-react";
 import ThemeToggle from "@/components/ui/theme-toggle";
 import { scrollToElement, getActiveSection } from "@/lib/scroll";
+import { Separator } from "@/components/ui/separator";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -60,7 +61,7 @@ export default function Navigation() {
           {/* Desktop menu */}
           <div className="hidden md:flex items-center gap-4">
             {/* Navigation links */}
-            <div className="flex items-center gap-2 mr-4">
+            <div className="flex items-center gap-2">
               {navItems.map(({ id, label }) => (
                 <a
                   key={id}
@@ -76,6 +77,8 @@ export default function Navigation() {
                 </a>
               ))}
             </div>
+
+            <Separator orientation="vertical" className="h-6 mx-2" />
 
             {/* Action buttons */}
             <div className="flex items-center gap-2">
@@ -94,6 +97,7 @@ export default function Navigation() {
                   {label === 'JOIN' ? 'JOIN*' : label} <ExternalLink className="h-3 w-3" />
                 </a>
               ))}
+              <Separator orientation="vertical" className="h-6 mx-2" />
               <ThemeToggle />
             </div>
           </div>
@@ -136,6 +140,8 @@ export default function Navigation() {
               </a>
             ))}
           </div>
+
+          <Separator className="my-2" />
 
           {/* Mobile action buttons */}
           <div className="flex flex-wrap gap-2">
