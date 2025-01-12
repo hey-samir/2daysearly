@@ -32,7 +32,7 @@ export default function Navigation() {
 
   const actionButtons = [
     { href: "https://interspace.samir.xyz/p/101-everything-you-wanted-to-know", label: "LEARN", primary: false },
-    { href: "https://tally.so/r/nP1v8e", label: "JOIN*", primary: false },
+    { href: "https://tally.so/r/nP1v8e", label: "JOIN", primary: false },
     { href: "mailto:pitch@daysearly.com", label: "PITCH", primary: true }
   ];
 
@@ -94,7 +94,7 @@ export default function Navigation() {
                       : 'bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700'
                   } px-3 py-1.5 rounded-md text-sm font-medium inline-flex items-center gap-1`}
                 >
-                  {label === 'JOIN' ? 'JOIN*' : label} <ExternalLink className="h-3 w-3" />
+                  {label} <ExternalLink className="h-3 w-3" />
                 </a>
               ))}
               <Separator orientation="vertical" className="h-6 mx-2" />
@@ -157,7 +157,7 @@ export default function Navigation() {
                     : 'bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700'
                 } px-3 py-1.5 rounded-md text-sm font-medium inline-flex items-center gap-1 w-full justify-center`}
               >
-                {label === 'JOIN' ? 'JOIN*' : label} <ExternalLink className="h-3 w-3" />
+                {label} <ExternalLink className="h-3 w-3" />
               </a>
             ))}
             <div className="flex justify-center w-full pt-2">

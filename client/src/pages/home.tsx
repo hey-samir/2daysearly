@@ -1,6 +1,6 @@
 import Navigation from "@/components/navigation";
 import Hero from "@/components/sections/hero";
-import Mission from "@/components/sections/mission";
+import Purpose from "@/components/sections/purpose";
 import Principles from "@/components/sections/principles";
 import Portfolio from "@/components/sections/portfolio";
 import { motion } from "framer-motion";
@@ -16,7 +16,7 @@ export default function Home() {
       <Navigation />
       <div className="w-full">
         <Hero />
-        <Mission />
+        <Purpose />
         <Principles />
         <Portfolio />
       </div>
