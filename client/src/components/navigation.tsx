@@ -38,9 +38,9 @@ export default function Navigation() {
 
   return (
     <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 bg-white dark:bg-gray-900 ${
-        isScrolled ? 'shadow-lg' : ''
-      } md:top-4 md:mx-4 md:rounded-full`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm ${
+        isScrolled ? 'shadow-sm' : ''
+      } md:top-4 md:mx-4`}
       role="navigation"
       aria-label="Main navigation"
     >
