@@ -6,16 +6,11 @@ import { scrollToElement, getActiveSection } from "@/lib/scroll";
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
   const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
-      const winScroll = document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      setScrollProgress(scrolled);
       setActiveSection(getActiveSection());
     };
     window.addEventListener("scroll", handleScroll);
@@ -65,17 +60,17 @@ export default function Navigation() {
             <div className="flex items-center gap-2 mr-4">
               {navItems.map(({ id, label }) => (
                 <a
-                    key={id}
-                    href={`#${id}`} 
-                    onClick={(e) => handleNavClick(e, id)} 
-                    className={`text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors duration-200 ${
-                      activeSection === id ? 'text-primary dark:text-primary font-medium' : ''
-                    }`}
-                    role="menuitem"
-                    aria-current={activeSection === id ? 'page' : undefined}
-                  >
-                    {label}
-                  </a>
+                  key={id}
+                  href={`#${id}`} 
+                  onClick={(e) => handleNavClick(e, id)} 
+                  className={`relative text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors duration-200 ${
+                    activeSection === id ? 'text-primary dark:text-primary font-medium after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary' : ''
+                  }`}
+                  role="menuitem"
+                  aria-current={activeSection === id ? 'page' : undefined}
+                >
+                  {label}
+                </a>
               ))}
             </div>
 
@@ -113,21 +108,6 @@ export default function Navigation() {
         </div>
       </div>
 
-      {/* Progress Bar */}
-      <div 
-        className={`h-0.5 bg-gray-100 dark:bg-gray-800 mx-4 sm:mx-6 rounded-full overflow-hidden ${isOpen ? 'md:block hidden' : 'block'}`}
-        role="progressbar"
-        aria-valuemin={0}
-        aria-valuemax={100}
-        aria-valuenow={Math.round(scrollProgress)}
-        aria-label="Page scroll progress"
-      >
-        <div
-          className="h-full bg-primary transition-all duration-200 rounded-full"
-          style={{ width: `${scrollProgress}%` }}
-        />
-      </div>
-
       {/* Mobile menu panel */}
       <div 
         id="mobile-menu"
@@ -143,8 +123,8 @@ export default function Navigation() {
                 key={id}
                 href={`#${id}`} 
                 onClick={(e) => handleNavClick(e, id)} 
-                className={`text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors duration-200 ${
-                  activeSection === id ? 'text-primary dark:text-primary font-medium' : ''
+                className={`relative text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors duration-200 ${
+                  activeSection === id ? 'text-primary dark:text-primary font-medium after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary' : ''
                 }`}
                 role="menuitem"
                 aria-current={activeSection === id ? 'page' : undefined}
