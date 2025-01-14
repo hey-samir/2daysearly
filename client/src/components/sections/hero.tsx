@@ -8,7 +8,7 @@ export default function Hero() {
         <AnimatedSection className="text-center w-full max-w-3xl" delay={0.2}>
           <div className="mt-8">
             <img 
-              src={encodeURI('/2 Days Early Logo 2025 vF.png')}
+              src={encodeURI('/2 Days Early Calendar Logo 2025')}
               alt="2 days early logo"
               className="w-full h-auto max-w-[500px] mx-auto"
             />
