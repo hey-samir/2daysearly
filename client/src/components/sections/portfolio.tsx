@@ -49,7 +49,7 @@ export default function Portfolio() {
               href={company.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-32 flex items-center justify-center"
+              className="group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-32 p-4 flex items-center justify-center"
               role="listitem"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg z-10">
@@ -62,7 +62,7 @@ export default function Portfolio() {
               <Image 
                 src={company.logo}
                 alt={`${company.name} logo`}
-                className="w-auto h-auto max-h-10 object-contain p-4" 
+                className="w-auto h-auto max-h-8 object-contain" 
                 fallbackSrc={IMAGES.companies.placeholder}
                 onLoad={() => console.log(`${company.name} image loaded`)}
                 onError={() => console.error(`Error loading ${company.name} image`)}
