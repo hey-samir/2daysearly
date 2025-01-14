@@ -5,9 +5,9 @@ import { IMAGES } from "@/lib/constants";
 
 export default function Hero() {
   return (
-    <section id="hero" className="w-full min-h-[45vh] flex items-center bg-background">
-      <div className="container flex justify-center py-16 md:py-20">
-        <AnimatedSection className="text-center w-full max-w-3xl" delay={0.2}>
+    <section id="hero" className="w-full flex items-center justify-center bg-background pt-12 pb-16">
+      <div className="container">
+        <AnimatedSection className="text-center w-full max-w-3xl mx-auto" delay={0.2}>
           <div>
             <Image 
               src={IMAGES.banner.src}
