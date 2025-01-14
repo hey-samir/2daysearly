@@ -3,6 +3,8 @@ import { Menu, X, ExternalLink } from "lucide-react";
 import ThemeToggle from "@/components/ui/theme-toggle";
 import { scrollToElement, getActiveSection } from "@/lib/scroll";
 import { Separator } from "@/components/ui/separator";
+import Image from "@/components/ui/image";
+import { IMAGES } from "@/lib/constants";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -51,16 +53,15 @@ export default function Navigation() {
             onClick={(e) => handleNavClick(e, 'hero')} 
             className="flex-shrink-0 transform hover:scale-105 transition-transform duration-200"
           >
-            <img 
-              src="/icon2025.png" 
+            <Image 
+              src={IMAGES.logo.src}
               alt="2 Days Early" 
               className="h-10 w-10 rounded-full object-cover bg-white"
+              fallbackSrc={IMAGES.logo.fallback}
             />
           </a>
 
-          {/* Desktop menu */}
           <div className="hidden md:flex items-center gap-4">
-            {/* Navigation links */}
             <div className="flex items-center gap-2">
               {navItems.map(({ id, label }) => (
                 <a
@@ -80,7 +81,6 @@ export default function Navigation() {
 
             <Separator orientation="vertical" className="h-6 mx-2" />
 
-            {/* Action buttons */}
             <div className="flex items-center gap-2">
               {actionButtons.map(({ href, label, primary }) => (
                 <a
@@ -102,7 +102,6 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-700 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-100 transition-colors duration-200"
@@ -115,7 +114,6 @@ export default function Navigation() {
         </div>
       </div>
 
-      {/* Mobile menu panel */}
       <div 
         id="mobile-menu"
         className={`md:hidden ${isOpen ? 'block' : 'hidden'} bg-[#baf5da]/95 dark:bg-white/95 backdrop-blur-sm`}
@@ -123,7 +121,6 @@ export default function Navigation() {
         aria-label="Mobile navigation"
       >
         <div className="px-4 pt-2 pb-3 space-y-4">
-          {/* Mobile navigation links */}
           <div className="flex flex-wrap gap-2">
             {navItems.map(({ id, label }) => (
               <a
@@ -143,7 +140,6 @@ export default function Navigation() {
 
           <Separator className="my-2" />
 
-          {/* Mobile action buttons */}
           <div className="flex flex-wrap gap-2">
             {actionButtons.map(({ href, label, primary }) => (
               <a

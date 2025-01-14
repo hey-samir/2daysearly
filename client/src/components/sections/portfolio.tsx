@@ -1,5 +1,7 @@
 import AnimatedSection from "@/components/ui/animated-section";
 import { ExternalLink } from "lucide-react";
+import Image from "@/components/ui/image";
+import { IMAGES } from "@/lib/constants";
 
 export default function Portfolio() {
   return (
@@ -35,10 +37,11 @@ export default function Portfolio() {
               </p>
             </div>
             <div className="h-full p-8 flex items-center justify-center">
-              <img 
-                src="/Backpack.png"
+              <Image 
+                src={IMAGES.companies.backpack}
                 alt="Backpack logo"
                 className="w-full h-full object-contain"
+                fallbackSrc={IMAGES.companies.placeholder}
               />
             </div>
           </a>
@@ -56,10 +59,11 @@ export default function Portfolio() {
               </p>
             </div>
             <div className="h-full p-8 flex items-center justify-center">
-              <img 
-                src="/Juno.png"
+              <Image 
+                src={IMAGES.companies.juno}
                 alt="JUNO logo"
                 className="w-full h-full object-contain"
+                fallbackSrc={IMAGES.companies.placeholder}
               />
             </div>
           </a>
@@ -77,10 +81,11 @@ export default function Portfolio() {
               </p>
             </div>
             <div className="h-full p-8 flex items-center justify-center">
-              <img 
-                src="/Waldo.png"
+              <Image 
+                src={IMAGES.companies.waldo}
                 alt="waldo logo"
                 className="w-full h-full object-contain"
+                fallbackSrc={IMAGES.companies.placeholder}
               />
             </div>
           </a>
