@@ -62,10 +62,11 @@ export default function Portfolio() {
                   src={company.logo}
                   alt={`${company.name} logo`}
                   className="w-auto h-auto max-h-16 max-w-[90%] object-contain"
-                fallbackSrc={IMAGES.companies.placeholder}
-                onLoad={() => console.log(`${company.name} image loaded`)}
-                onError={() => console.error(`Error loading ${company.name} image`)}
-              />
+                  fallbackSrc={IMAGES.companies.placeholder}
+                  onLoad={() => console.log(`${company.name} image loaded`)}
+                  onError={() => console.error(`Error loading ${company.name} image`)}
+                />
+              </div>
             </a>
           ))}
         </div>
