@@ -28,7 +28,7 @@ export default function Portfolio() {
             href="https://www.backpack529.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-64"
+            className="group relative bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-48"
             role="listitem"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center p-8 z-10">
@@ -52,7 +52,7 @@ export default function Portfolio() {
             href="https://juno.finance/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-64"
+            className="group relative bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-48"
             role="listitem"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center p-8 z-10">
@@ -76,7 +76,7 @@ export default function Portfolio() {
             href="https://www.waldo.ai/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-64"
+            className="group relative bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-48"
             role="listitem"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center p-8 z-10">
