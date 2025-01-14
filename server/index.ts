@@ -3,13 +3,17 @@ import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import type { Server } from "http";
 import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Serve static files from attached_assets directory
-app.use('/attached_assets', express.static(path.join(process.cwd(), 'attached_assets')));
+// Serve static files from attached_assets directory with proper path resolution
+app.use('/attached_assets', express.static(path.join(__dirname, '..', 'attached_assets')));
 
 interface ExtendedResponse extends Response {
   json: (body: any, ...args: any[]) => Response;

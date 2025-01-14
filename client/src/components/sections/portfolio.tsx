@@ -24,77 +24,51 @@ export default function Portfolio() {
           role="list"
           aria-label="Portfolio companies"
         >
-          <a 
-            href="https://www.backpack529.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-36"
-            role="listitem"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center p-8 z-10">
-              <p className="text-white text-center text-lg font-medium">
-                Simplifying 529 plan management for families and advisors with innovative payment solutions.
-              </p>
-            </div>
-            <div className="h-full p-8 flex items-center justify-center relative">
-              <Image 
-                src={IMAGES.companies.backpack}
-                alt="Backpack logo"
-                className="w-full h-full object-contain"
-                fallbackSrc={IMAGES.companies.placeholder}
-                onLoad={() => console.log('Backpack image loaded')}
-                onError={() => console.error('Error loading Backpack image')}
-              />
-            </div>
-          </a>
-
-          <a 
-            href="https://juno.finance/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-36"
-            role="listitem"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center p-8 z-10">
-              <p className="text-white text-center text-lg font-medium">
-                Modern banking for the crypto-native, with seamless on-ramps and a focus on user experience.
-              </p>
-            </div>
-            <div className="h-full p-8 flex items-center justify-center relative">
-              <Image 
-                src={IMAGES.companies.juno}
-                alt="JUNO logo"
-                className="w-full h-full object-contain"
-                fallbackSrc={IMAGES.companies.placeholder}
-                onLoad={() => console.log('JUNO image loaded')}
-                onError={() => console.error('Error loading JUNO image')}
-              />
-            </div>
-          </a>
-
-          <a 
-            href="https://www.waldo.ai/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-36"
-            role="listitem"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center p-8 z-10">
-              <p className="text-white text-center text-lg font-medium">
-                AI-powered fraud prevention that automates compliance and keeps your business safe.
-              </p>
-            </div>
-            <div className="h-full p-8 flex items-center justify-center relative">
-              <Image 
-                src={IMAGES.companies.waldo}
-                alt="waldo logo"
-                className="w-full h-full object-contain"
-                fallbackSrc={IMAGES.companies.placeholder}
-                onLoad={() => console.log('Waldo image loaded')}
-                onError={() => console.error('Error loading Waldo image')}
-              />
-            </div>
-          </a>
+          {[
+            {
+              name: "Backpack",
+              href: "https://www.backpack529.com/",
+              description: "Simplifying 529 plan management for families and advisors with innovative payment solutions.",
+              logo: IMAGES.companies.backpack
+            },
+            {
+              name: "JUNO",
+              href: "https://juno.finance/",
+              description: "Modern banking for the crypto-native, with seamless on-ramps and a focus on user experience.",
+              logo: IMAGES.companies.juno
+            },
+            {
+              name: "Waldo",
+              href: "https://www.waldo.ai/",
+              description: "AI-powered fraud prevention that automates compliance and keeps your business safe.",
+              logo: IMAGES.companies.waldo
+            }
+          ].map((company) => (
+            <a 
+              key={company.name}
+              href={company.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-36"
+              role="listitem"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center p-8 z-10">
+                <p className="text-white text-center text-lg font-medium">
+                  {company.description}
+                </p>
+              </div>
+              <div className="h-full p-6 flex items-center justify-center relative">
+                <Image 
+                  src={company.logo}
+                  alt={`${company.name} logo`}
+                  className="w-auto h-full object-contain max-h-20"
+                  fallbackSrc={IMAGES.companies.placeholder}
+                  onLoad={() => console.log(`${company.name} image loaded`)}
+                  onError={() => console.error(`Error loading ${company.name} image`)}
+                />
+              </div>
+            </a>
+          ))}
         </div>
       </div>
     </section>

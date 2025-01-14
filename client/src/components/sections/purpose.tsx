@@ -1,4 +1,3 @@
-
 import { memo } from "react";
 import AnimatedSection from "@/components/ui/animated-section";
 
@@ -56,6 +55,10 @@ const Purpose = () => {
             <div className="text-sm text-gray-600 dark:text-gray-400">investing capacity annually</div>
           </div>
         </div>
+
+        <p className="text-sm text-gray-600 dark:text-gray-400 mt-8 text-center italic">
+          *To build the best community we can for our members, we&apos;re limiting access to current and former Chime employees only at this time
+        </p>
       </AnimatedSection>
     </section>
   );

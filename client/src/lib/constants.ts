@@ -10,8 +10,8 @@ export const IMAGES = {
   },
   companies: {
     placeholder: "/company-placeholder.png",
-    backpack: "/Backpack.png",
-    juno: "/Juno.png",
-    waldo: "/Waldo.png"
+    backpack: "/attached_assets/Backpack.png",
+    juno: "/attached_assets/Juno.png",
+    waldo: "/attached_assets/Waldo.png"
   }
 } as const;
