@@ -56,7 +56,7 @@ export default function Navigation() {
             <Image 
               src={IMAGES.logo.src}
               alt="2 Days Early" 
-              className="h-10 w-10 rounded-full object-contain"
+              className="h-12 w-12 rounded-full object-contain"
               fallbackSrc={IMAGES.logo.fallback}
             />
           </a>

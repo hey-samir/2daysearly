@@ -5,10 +5,10 @@ import { IMAGES } from "@/lib/constants";
 
 export default function Hero() {
   return (
-    <section id="hero" className="w-full pt-16 md:pt-14 pb-16 bg-background">
+    <section id="hero" className="w-full pt-16 md:pt-14 pb-8 bg-background">
       <div className="container flex justify-center">
         <AnimatedSection className="text-center w-full max-w-3xl" delay={0.2}>
-          <div className="mt-4">
+          <div className="mt-2">
             <Image 
               src={IMAGES.banner.src}
               alt="2 days early logo"
