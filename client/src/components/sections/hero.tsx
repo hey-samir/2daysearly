@@ -5,8 +5,8 @@ import { IMAGES } from "@/lib/constants";
 
 export default function Hero() {
   return (
-    <section id="hero" className="w-full min-h-[40vh] flex items-center bg-background">
-      <div className="container flex justify-center py-16">
+    <section id="hero" className="w-full min-h-[45vh] flex items-center bg-background">
+      <div className="container flex justify-center py-24 md:py-28">
         <AnimatedSection className="text-center w-full max-w-3xl" delay={0.2}>
           <div>
             <Image 
