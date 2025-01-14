@@ -49,19 +49,19 @@ export default function Portfolio() {
               href={company.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-40"
+              className="group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center h-32"
               role="listitem"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center p-6 z-10">
-                <p className="text-white text-center text-lg font-medium">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center p-4 z-10">
+                <p className="text-white text-center text-sm font-medium">
                   {company.description}
                 </p>
               </div>
-              <div className="flex items-center justify-center h-full w-full p-6">
+              <div className="flex items-center justify-center h-full w-full p-4">
                 <Image 
                   src={company.logo}
                   alt={`${company.name} logo`}
-                  className="max-h-16 object-contain mx-auto" // Modified className
+                  className="w-auto h-auto max-h-10 object-contain" 
                   fallbackSrc={IMAGES.companies.placeholder}
                   onLoad={() => console.log(`${company.name} image loaded`)}
                   onError={() => console.error(`Error loading ${company.name} image`)}
