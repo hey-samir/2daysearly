@@ -17,19 +17,22 @@ export default function Image({
 }: ImageProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [currentSrc, setCurrentSrc] = useState(src);
 
-  // Add logging for development to track image loading states
   useEffect(() => {
     if (process.env.NODE_ENV === 'development') {
-      console.log(`Image loading: ${src}`);
+      console.log(`[Image Debug] Loading image: ${src}`);
     }
+    setCurrentSrc(src);
+    setIsLoading(true);
+    setError(false);
   }, [src]);
 
   const handleLoad = () => {
     setIsLoading(false);
     setError(false);
     if (process.env.NODE_ENV === 'development') {
-      console.log(`Image loaded successfully: ${src}`);
+      console.log(`[Image Debug] Successfully loaded: ${currentSrc}`);
     }
   };
 
@@ -37,19 +40,15 @@ export default function Image({
     setIsLoading(false);
     setError(true);
     if (process.env.NODE_ENV === 'development') {
-      console.log(`Image failed to load: ${src}, falling back to: ${fallbackSrc}`);
+      console.log(`[Image Debug] Failed to load: ${currentSrc}, falling back to: ${fallbackSrc}`);
     }
-    if (fallbackSrc && src !== fallbackSrc) {
-      // Using direct src update instead of getElementById for more reliable fallback
-      const imgElement = document.querySelector(`img[src="${src}"]`) as HTMLImageElement;
-      if (imgElement) {
-        imgElement.src = fallbackSrc;
-      }
+    if (fallbackSrc && currentSrc !== fallbackSrc) {
+      setCurrentSrc(fallbackSrc);
     }
   };
 
   return (
-    <div className="relative inline-block">
+    <div className={cn("relative inline-block", className)}>
       {showLoading && isLoading && (
         <Skeleton 
           className={cn(
@@ -62,11 +61,10 @@ export default function Image({
         className={cn(
           "transition-opacity duration-200",
           isLoading && "opacity-0",
-          error && "opacity-50",
-          className
+          error && "opacity-50"
         )}
         alt={alt}
-        src={error ? fallbackSrc : src}
+        src={currentSrc}
         onLoad={handleLoad}
         onError={handleError}
         {...props}

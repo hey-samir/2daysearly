@@ -36,12 +36,14 @@ export default function Portfolio() {
                 Simplifying 529 plan management for families and advisors with innovative payment solutions.
               </p>
             </div>
-            <div className="h-full p-8 flex items-center justify-center">
+            <div className="h-full p-8 flex items-center justify-center relative">
               <Image 
                 src={IMAGES.companies.backpack}
                 alt="Backpack logo"
                 className="w-full h-full object-contain"
                 fallbackSrc={IMAGES.companies.placeholder}
+                onLoad={() => console.log('Backpack image loaded')}
+                onError={() => console.error('Error loading Backpack image')}
               />
             </div>
           </a>
@@ -58,12 +60,14 @@ export default function Portfolio() {
                 Modern banking for the crypto-native, with seamless on-ramps and a focus on user experience.
               </p>
             </div>
-            <div className="h-full p-8 flex items-center justify-center">
+            <div className="h-full p-8 flex items-center justify-center relative">
               <Image 
                 src={IMAGES.companies.juno}
                 alt="JUNO logo"
                 className="w-full h-full object-contain"
                 fallbackSrc={IMAGES.companies.placeholder}
+                onLoad={() => console.log('JUNO image loaded')}
+                onError={() => console.error('Error loading JUNO image')}
               />
             </div>
           </a>
@@ -80,12 +84,14 @@ export default function Portfolio() {
                 AI-powered fraud prevention that automates compliance and keeps your business safe.
               </p>
             </div>
-            <div className="h-full p-8 flex items-center justify-center">
+            <div className="h-full p-8 flex items-center justify-center relative">
               <Image 
                 src={IMAGES.companies.waldo}
                 alt="waldo logo"
                 className="w-full h-full object-contain"
                 fallbackSrc={IMAGES.companies.placeholder}
+                onLoad={() => console.log('Waldo image loaded')}
+                onError={() => console.error('Error loading Waldo image')}
               />
             </div>
           </a>
