@@ -5,6 +5,8 @@ import { Skeleton } from "@/components/ui/skeleton";
 type ImageProps = ComponentProps<"img"> & {
   fallbackSrc?: string;
   showLoading?: boolean;
+  onLoad?: (e: React.SyntheticEvent<HTMLImageElement>) => void;
+  onError?: (e: React.SyntheticEvent<HTMLImageElement>) => void;
 };
 
 export default function Image({ 
@@ -13,6 +15,8 @@ export default function Image({
   src,
   fallbackSrc = "/placeholder-image.png",
   showLoading = true,
+  onLoad: propsOnLoad,
+  onError: propsOnError,
   ...props 
 }: ImageProps) {
   const [isLoading, setIsLoading] = useState(true);
@@ -20,47 +24,52 @@ export default function Image({
   const [currentSrc, setCurrentSrc] = useState(src);
 
   useEffect(() => {
+    setIsLoading(true);
+    setError(false);
+    setCurrentSrc(src);
+
     if (process.env.NODE_ENV === 'development') {
       console.log(`[Image Debug] Loading image: ${src}`);
     }
-    setCurrentSrc(src);
-    setIsLoading(true);
-    setError(false);
   }, [src]);
 
-  const handleLoad = () => {
+  const handleLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
     setIsLoading(false);
     setError(false);
     if (process.env.NODE_ENV === 'development') {
       console.log(`[Image Debug] Successfully loaded: ${currentSrc}`);
     }
+    propsOnLoad?.(e);
   };
 
-  const handleError = () => {
+  const handleError = (e: React.SyntheticEvent<HTMLImageElement>) => {
     setIsLoading(false);
     setError(true);
+
     if (process.env.NODE_ENV === 'development') {
-      console.log(`[Image Debug] Failed to load: ${currentSrc}, falling back to: ${fallbackSrc}`);
+      console.error(`[Image Debug] Failed to load: ${currentSrc}`);
     }
+
     if (fallbackSrc && currentSrc !== fallbackSrc) {
+      console.log(`[Image Debug] Attempting fallback: ${fallbackSrc}`);
       setCurrentSrc(fallbackSrc);
     }
+
+    propsOnError?.(e);
   };
 
   return (
-    <div className={cn("relative inline-block", className)}>
+    <div className={cn("relative", className)}>
       {showLoading && isLoading && (
         <Skeleton 
-          className={cn(
-            "absolute inset-0 bg-muted/50",
-            className
-          )} 
+          className="absolute inset-0 bg-muted/50"
         />
       )}
       <img
         className={cn(
           "transition-opacity duration-200",
           isLoading && "opacity-0",
+          !isLoading && "opacity-100",
           error && "opacity-50"
         )}
         alt={alt}

@@ -5,7 +5,7 @@ export const IMAGES = {
     fallback: "/fallback-logo.png"
   },
   banner: {
-    src: "/calendar2025.png",
+    src: "/2 Days Early Banner 2025.png",
     fallback: "/fallback-banner.png"
   },
   companies: {
