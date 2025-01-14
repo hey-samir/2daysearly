@@ -32,14 +32,6 @@ export default function Home() {
           </main>
           <footer className="w-full text-center py-8 text-sm bg-background">
             <motion.p 
-              className="text-gray-600 dark:text-gray-400 mb-2"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              *To build the best community we can for our members, we&apos;re limiting access to current and former Chime employees only at this time
-            </motion.p>
-            <motion.p 
               className="text-gray-600 dark:text-gray-400"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
