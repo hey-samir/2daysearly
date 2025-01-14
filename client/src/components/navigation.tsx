@@ -52,7 +52,7 @@ export default function Navigation() {
             className="flex-shrink-0 transform hover:scale-105 transition-transform duration-200"
           >
             <img 
-              src="/2DE 2025 Icon" 
+              src="/2 Days Early logo.png" 
               alt="2 Days Early" 
               className="h-10 w-10 rounded-full object-cover bg-white"
             />
