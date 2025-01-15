@@ -51,12 +51,12 @@ export default function Portfolio() {
               className="group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
               role="listitem"
             >
-              <div className="flex items-center justify-center min-h-[160px] p-6">
-                <div className="relative w-full max-w-[200px] flex items-center justify-center">
+              <div className="flex items-center justify-center min-h-[120px] p-4">
+                <div className="relative w-full max-w-[160px] flex items-center justify-center">
                   <Image 
                     src={company.logo}
                     alt={`${company.name} logo`}
-                    className="max-w-full w-auto h-auto object-contain max-h-[40px]" 
+                    className="w-auto h-[32px] object-contain" 
                     fallbackSrc={IMAGES.companies.placeholder}
                     onLoad={() => console.log(`${company.name} image loaded`)}
                     onError={() => console.error(`Error loading ${company.name} image`)}
