@@ -19,7 +19,7 @@ export default function Portfolio() {
           </h2>
         </AnimatedSection>
         <div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
           role="list"
           aria-label="Portfolio companies"
         >
@@ -48,10 +48,10 @@ export default function Portfolio() {
               href={company.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="block group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+              className="block group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-[120px]"
               role="listitem"
             >
-              <div className="h-24 w-full flex items-center justify-center">
+              <div className="h-full flex items-center justify-center">
                 <Image 
                   src={company.logo}
                   alt={`${company.name} logo`}
