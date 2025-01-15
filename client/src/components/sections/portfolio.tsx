@@ -49,19 +49,17 @@ export default function Portfolio() {
               href={company.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+              className="group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center h-32"
               role="listitem"
             >
-              <div className="h-32 p-4 flex items-center justify-center">
-                <Image 
-                  src={company.logo}
-                  alt={`${company.name} logo`}
-                  className="w-auto h-auto max-h-8 object-contain" 
-                  fallbackSrc={IMAGES.companies.placeholder}
-                  onLoad={() => console.log(`${company.name} image loaded`)}
-                  onError={() => console.error(`Error loading ${company.name} image`)}
-                />
-              </div>
+              <Image 
+                src={company.logo}
+                alt={`${company.name} logo`}
+                className="w-auto h-auto max-w-[160px] max-h-12 object-contain" 
+                fallbackSrc={IMAGES.companies.placeholder}
+                onLoad={() => console.log(`${company.name} image loaded`)}
+                onError={() => console.error(`Error loading ${company.name} image`)}
+              />
               <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
                 <div className="h-full w-full flex items-center justify-center p-4">
                   <p className="text-white text-center text-sm font-medium">
