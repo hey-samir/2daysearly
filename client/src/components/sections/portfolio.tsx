@@ -52,7 +52,7 @@ export default function Portfolio() {
               role="listitem"
             >
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-[90%] h-[85%] relative">
+                <div className="w-[95%] h-[90%] relative">
                   <Image 
                     src={company.logo}
                     alt={`${company.name} logo`}

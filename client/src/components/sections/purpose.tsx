@@ -48,7 +48,7 @@ const Purpose = () => {
           </div>
           <div className="bg-white dark:bg-primary/10 p-6 rounded-lg shadow-sm text-center">
             <div className="text-3xl font-bold text-primary mb-2">73%</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Have Product or Engineering backgrounds & expertise</div>
+            <div className="text-sm text-gray-600 dark:text-gray-400">Have Product or Engineering expertise</div>
           </div>
           <div className="bg-white dark:bg-primary/10 p-6 rounded-lg shadow-sm text-center">
             <div className="text-3xl font-bold text-primary mb-2">$2.5M</div>
