@@ -49,13 +49,13 @@ export default function Portfolio() {
               href={company.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center h-32"
+              className="group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center h-28 p-6"
               role="listitem"
             >
               <Image 
                 src={company.logo}
                 alt={`${company.name} logo`}
-                className="w-auto h-auto max-w-[160px] max-h-12 object-contain" 
+                className="w-auto h-auto max-h-10 object-contain" 
                 fallbackSrc={IMAGES.companies.placeholder}
                 onLoad={() => console.log(`${company.name} image loaded`)}
                 onError={() => console.error(`Error loading ${company.name} image`)}
