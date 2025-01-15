@@ -52,7 +52,7 @@ export default function Portfolio() {
               className="group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
               role="listitem"
             >
-              <div className="h-32 p-6 flex items-center justify-center">
+              <div className="h-32 p-4 flex items-center justify-center">
                 <Image 
                   src={company.logo}
                   alt={`${company.name} logo`}
