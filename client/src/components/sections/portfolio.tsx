@@ -52,15 +52,17 @@ export default function Portfolio() {
               className="group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
               role="listitem"
             >
-              <div className="p-8 flex items-center justify-center aspect-[3/2]">
-                <Image 
-                  src={company.logo}
-                  alt={`${company.name} logo`}
-                  className="w-[140px] h-[40px] object-contain" 
-                  fallbackSrc={IMAGES.companies.placeholder}
-                  onLoad={() => console.log(`${company.name} image loaded`)}
-                  onError={() => console.error(`Error loading ${company.name} image`)}
-                />
+              <div className="flex items-center justify-center p-8">
+                <div className="w-[180px] h-[48px] flex items-center justify-center">
+                  <Image 
+                    src={company.logo}
+                    alt={`${company.name} logo`}
+                    className="w-auto h-full object-contain" 
+                    fallbackSrc={IMAGES.companies.placeholder}
+                    onLoad={() => console.log(`${company.name} image loaded`)}
+                    onError={() => console.error(`Error loading ${company.name} image`)}
+                  />
+                </div>
               </div>
               <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
                 <div className="h-full w-full flex items-center justify-center p-4">

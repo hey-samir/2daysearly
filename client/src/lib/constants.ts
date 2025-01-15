@@ -1,17 +1,17 @@
 // Image paths and fallbacks
 export const IMAGES = {
   logo: {
-    src: "/assets/2 Days Early Calendar Icon 2025.png",
-    fallback: "/assets/fallback-logo.png"
+    src: "/2-days-early-calendar-icon-2025.png",
+    fallback: "/fallback-logo.png"
   },
   banner: {
-    src: "/assets/2 Days Early Calendar Logo 2025 - Banner.png",
-    fallback: "/assets/fallback-banner.png"
+    src: "/2-days-early-calendar-logo-2025-banner.png",
+    fallback: "/fallback-banner.png"
   },
   companies: {
-    placeholder: "/assets/company-placeholder.png",
-    backpack: "/assets/Backpack.png",
-    juno: "/assets/Juno.png",
-    waldo: "/assets/Waldo.png"
+    placeholder: "/company-placeholder.png",
+    backpack: "/backpack.png",
+    juno: "/juno.png",
+    waldo: "/waldo.png"
   }
 } as const;
