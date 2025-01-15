@@ -1,5 +1,4 @@
 import AnimatedSection from "@/components/ui/animated-section";
-import { ExternalLink } from "lucide-react";
 import Image from "@/components/ui/image";
 import { IMAGES } from "@/lib/constants";
 
@@ -52,12 +51,12 @@ export default function Portfolio() {
               className="group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
               role="listitem"
             >
-              <div className="flex items-center justify-center h-32">
-                <div className="w-48 h-12 relative flex items-center justify-center">
+              <div className="flex items-center justify-center min-h-[160px] p-6">
+                <div className="relative w-full max-w-[200px] flex items-center justify-center">
                   <Image 
                     src={company.logo}
                     alt={`${company.name} logo`}
-                    className="max-w-full max-h-full w-auto h-auto object-contain" 
+                    className="max-w-full w-auto h-auto object-contain max-h-[40px]" 
                     fallbackSrc={IMAGES.companies.placeholder}
                     onLoad={() => console.log(`${company.name} image loaded`)}
                     onError={() => console.error(`Error loading ${company.name} image`)}
