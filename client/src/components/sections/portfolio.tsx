@@ -51,13 +51,15 @@ export default function Portfolio() {
               className="group relative aspect-[3/1] bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
               role="listitem"
             >
-              <div className="absolute inset-0 flex items-center justify-center p-4">
-                <Image 
-                  src={company.logo}
-                  alt={`${company.name} logo`}
-                  className="max-h-full w-auto object-contain" 
-                  fallbackSrc={IMAGES.companies.placeholder}
-                />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="h-[60%] w-[80%] flex items-center justify-center">
+                  <Image 
+                    src={company.logo}
+                    alt={`${company.name} logo`}
+                    className="max-h-full w-auto object-contain" 
+                    fallbackSrc={IMAGES.companies.placeholder}
+                  />
+                </div>
               </div>
               <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center p-6">
                 <p className="text-white text-center text-sm font-medium">
