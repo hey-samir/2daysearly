@@ -48,11 +48,11 @@ export default function Portfolio() {
               href={company.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+              className="block group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
               role="listitem"
             >
-              <div className="h-24 flex items-center justify-center">
-                <div className="w-40 flex items-center justify-center">
+              <div className="flex items-center justify-center h-24">
+                <div className="flex items-center justify-center w-40">
                   <Image 
                     src={company.logo}
                     alt={`${company.name} logo`}
