@@ -9,7 +9,7 @@ export default function Portfolio() {
       className="min-h-[50vh] py-[5vh] md:py-[8vh] bg-gray-50 dark:bg-primary/5"
       aria-labelledby="portfolio-heading"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <h2 
             id="portfolio-heading" 
@@ -19,7 +19,7 @@ export default function Portfolio() {
           </h2>
         </AnimatedSection>
         <div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-[3vh] md:gap-[4vh]"
+          className="grid grid-cols-1 md:grid-cols-3 gap-[3vh] md:gap-[4vh] max-w-4xl mx-auto"
           role="list"
           aria-label="Portfolio companies"
         >
