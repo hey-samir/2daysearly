@@ -54,10 +54,10 @@ export default function Navigation() {
             className="flex-shrink-0 transform hover:scale-105 transition-transform duration-200"
           >
             <Image 
-              src={IMAGES.logo.src}
+              src="/images/2-days-early-calendar-icon-2025.png"
               alt="2 Days Early" 
               className="h-12 w-12 rounded-full object-contain"
-              fallbackSrc={IMAGES.logo.fallback}
+              fallbackSrc="/images/2-days-early-logo-2025.png"
             />
           </a>
 
