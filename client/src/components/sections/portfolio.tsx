@@ -51,12 +51,12 @@ export default function Portfolio() {
               className="group relative aspect-[3/1] bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
               role="listitem"
             >
-              <div className="absolute inset-0 flex items-center justify-center p-4">
-                <div className="w-full h-full flex items-center justify-center">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-[80%] h-[70%] relative">
                   <Image 
                     src={company.logo}
                     alt={`${company.name} logo`}
-                    className="max-h-full max-w-[80%] w-auto object-contain" 
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-h-full max-w-full w-auto object-contain" 
                     fallbackSrc={IMAGES.companies.placeholder}
                   />
                 </div>
