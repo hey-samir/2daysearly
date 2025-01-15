@@ -51,7 +51,7 @@ export default function Portfolio() {
               className="group relative aspect-[3/1] bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
               role="listitem"
             >
-              <div className="absolute inset-0 grid place-items-center p-8">
+              <div className="absolute inset-0 grid place-items-center p-4 md:p-6">
                 <Image 
                   src={company.logo}
                   alt={`${company.name} logo`}
