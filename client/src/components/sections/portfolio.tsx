@@ -48,23 +48,21 @@ export default function Portfolio() {
               href={company.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="block group bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-[15vh] min-h-[120px] max-h-[200px]"
+              className="group relative aspect-[3/2] bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
               role="listitem"
             >
-              <div className="h-full w-full flex items-center justify-center p-6">
+              <div className="absolute inset-0 grid place-items-center p-8">
                 <Image 
                   src={company.logo}
                   alt={`${company.name} logo`}
-                  className="w-auto h-auto max-w-[60%] max-h-[50%] object-contain" 
+                  className="w-full h-full object-contain" 
                   fallbackSrc={IMAGES.companies.placeholder}
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
-                <div className="h-full w-full flex items-center justify-center p-6">
-                  <p className="text-white text-center text-sm font-medium">
-                    {company.description}
-                  </p>
-                </div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg grid place-items-center p-6">
+                <p className="text-white text-center text-sm font-medium">
+                  {company.description}
+                </p>
               </div>
             </a>
           ))}
