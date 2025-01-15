@@ -51,7 +51,7 @@ export default function Portfolio() {
               className="block group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-[120px]"
               role="listitem"
             >
-              <div className="flex items-center justify-center min-h-[120px]">
+              <div className="absolute inset-0 flex items-center justify-center">
                 <Image 
                   src={company.logo}
                   alt={`${company.name} logo`}
