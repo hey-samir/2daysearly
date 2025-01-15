@@ -6,20 +6,20 @@ export default function Portfolio() {
   return (
     <section 
       id="portfolio" 
-      className="py-12 md:py-16 bg-gray-50 dark:bg-primary/5"
+      className="min-h-[50vh] py-[5vh] md:py-[8vh] bg-gray-50 dark:bg-primary/5"
       aria-labelledby="portfolio-heading"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <h2 
             id="portfolio-heading" 
-            className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-12"
+            className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-[4vh] md:mb-[6vh]"
           >
             We're proud to invest our time and money in operators at these startups:
           </h2>
         </AnimatedSection>
         <div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-[3vh] md:gap-[4vh]"
           role="list"
           aria-label="Portfolio companies"
         >
@@ -48,7 +48,7 @@ export default function Portfolio() {
               href={company.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="block group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-[120px]"
+              className="block group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-[15vh] min-h-[120px] max-h-[200px]"
               role="listitem"
             >
               <div className="absolute inset-0 flex items-center justify-center">
