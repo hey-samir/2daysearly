@@ -52,11 +52,11 @@ export default function Portfolio() {
               role="listitem"
             >
               <div className="h-24 flex items-center justify-center">
-                <div className="w-40 h-12 flex items-center justify-center">
+                <div className="w-40 flex items-center justify-center">
                   <Image 
                     src={company.logo}
                     alt={`${company.name} logo`}
-                    className="w-auto h-full object-contain" 
+                    className="w-auto h-8 object-contain" 
                     fallbackSrc={IMAGES.companies.placeholder}
                   />
                 </div>
