@@ -7,20 +7,20 @@ export default function Portfolio() {
   return (
     <section 
       id="portfolio" 
-      className="py-8 md:py-12 bg-gray-50 dark:bg-primary/5"
+      className="py-12 md:py-16 bg-gray-50 dark:bg-primary/5"
       aria-labelledby="portfolio-heading"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <h2 
             id="portfolio-heading" 
-            className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-8"
+            className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-12"
           >
             We're proud to invest our time and money in operators at these startups:
           </h2>
         </AnimatedSection>
         <div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           role="list"
           aria-label="Portfolio companies"
         >
@@ -52,12 +52,12 @@ export default function Portfolio() {
               className="group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
               role="listitem"
             >
-              <div className="flex items-center justify-center p-8">
-                <div className="w-[180px] h-[48px] flex items-center justify-center">
+              <div className="flex items-center justify-center h-32">
+                <div className="w-48 h-12 relative flex items-center justify-center">
                   <Image 
                     src={company.logo}
                     alt={`${company.name} logo`}
-                    className="w-auto h-full object-contain" 
+                    className="max-w-full max-h-full w-auto h-auto object-contain" 
                     fallbackSrc={IMAGES.companies.placeholder}
                     onLoad={() => console.log(`${company.name} image loaded`)}
                     onError={() => console.error(`Error loading ${company.name} image`)}
@@ -65,7 +65,7 @@ export default function Portfolio() {
                 </div>
               </div>
               <div className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
-                <div className="h-full w-full flex items-center justify-center p-4">
+                <div className="h-full w-full flex items-center justify-center p-6">
                   <p className="text-white text-center text-sm font-medium">
                     {company.description}
                   </p>
