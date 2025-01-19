@@ -28,17 +28,17 @@ const partners = [
   {
     name: "Samir",
     bio: "Finance nerd turned fintech builder, Samir leads Financial Partnerships at Cash App, expanding money superpowers for millions. Previously shaped strategic finance at HRT, Unit, and Chime, after getting his start wrangling spreadsheets at JP Morgan. Writes over-engineered fintech takes and is learning to code at the speed of thought with Replit.",
-    image: "/images/samir.png"
+    image: "/images/Samir-Desai-min.png"
   },
   {
     name: "Maia",
     bio: "Maia builds cool fintech stuff at Chime (after they acquired her credit-building startup Pinch). Previously turned jewelry rental into an empire at Rocksbox (also acquired). Now backs other founders at XFactor & Parcel B while nerding out on fintech. Probably thinking about ramen right now.",
-    image: "/images/maia.png"
+    image: "/images/Maia.png"
   },
   {
     name: "Baishi",
     bio: "At Chime, Baishi shapes lending products that help millions get the credit they deserve. Previously built tech to revolutionize mortgages at LendingHome and reimagined home search at Compass. Now building surprisingly great financial features while raising surprisingly great tiny humans.",
-    image: "/images/baishi.png"
+    image: "/images/Baishi.png"
   }
 ];
 
@@ -54,7 +54,7 @@ const Partners = () => {
           id="partners-heading"
           className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-12 text-center"
         >
-          Meet the Partners
+          Team
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {partners.map((partner) => (
