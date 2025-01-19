@@ -33,12 +33,12 @@ const partners = [
   {
     name: "Baishi",
     bio: "At Chime, Baishi shapes lending products that help millions get the credit they deserve. Previously built tech to revolutionize mortgages at LendingHome and reimagined home search at Compass. Now building surprisingly great financial features while raising surprisingly great tiny humans.",
-    image: "/images/Baishi.png"
+    image: "/images/baishi.png"
   },
   {
     name: "Samir",
     bio: "Finance nerd turned fintech builder, Samir leads Financial Partnerships at Cash App, expanding money superpowers for millions. Previously shaped strategic finance at HRT, Unit, and Chime, after getting his start wrangling spreadsheets at JP Morgan. Writes over-engineered fintech takes and is learning to code at the speed of thought with Replit.",
-    image: "/images/Samir-Desai-min.png"
+    image: "/images/samir.png"
   }
 ];
 
