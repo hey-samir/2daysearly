@@ -7,6 +7,7 @@ interface PartnerCardProps {
   name: string;
   bio: string;
   image: string;
+  imageClassName?: string;
 }
 
 const PartnerCard = memo(({ name, bio, image }: PartnerCardProps) => (
@@ -15,7 +16,7 @@ const PartnerCard = memo(({ name, bio, image }: PartnerCardProps) => (
       <Image
         src={image}
         alt={`${name}'s portrait`}
-        className="w-full h-full object-cover"
+        className={`w-full h-full object-cover ${imageClassName || ''}`}
         fallbackSrc="/images/2-days-early-logo-2025.png"
       />
     </div>
@@ -38,7 +39,8 @@ const partners = [
   {
     name: "Samir",
     bio: "Finance nerd turned fintech builder, Samir leads Financial Partnerships at Cash App, expanding money superpowers for millions. Previously shaped strategic finance at HRT, Unit, and Chime, after getting his start wrangling spreadsheets at JP Morgan. Writes over-engineered fintech takes and is learning to code at the speed of thought with Replit.",
-    image: "/images/Samir-Desai-min.png"
+    image: "/images/Samir-Desai-min.png",
+    imageClassName: "scale-[0.85]"
   }
 ];
 
