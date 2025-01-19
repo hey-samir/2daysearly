@@ -4,6 +4,7 @@ import Hero from "@/components/sections/hero";
 import Purpose from "@/components/sections/purpose";
 import Principles from "@/components/sections/principles";
 import Portfolio from "@/components/sections/portfolio";
+import Partners from "@/components/sections/partners";
 import { motion, LazyMotion, domAnimation } from "framer-motion";
 import PageTransition from "@/components/ui/page-transition";
 
@@ -11,6 +12,7 @@ const MemoizedNavigation = memo(Navigation);
 const MemoizedHero = memo(Hero);
 const MemoizedPurpose = memo(Purpose);
 const MemoizedPrinciples = memo(Principles);
+const MemoizedPartners = memo(Partners);
 const MemoizedPortfolio = memo(Portfolio);
 
 export default function Home() {
@@ -28,6 +30,7 @@ export default function Home() {
             <MemoizedHero />
             <MemoizedPurpose />
             <MemoizedPrinciples />
+            <MemoizedPartners />
             <MemoizedPortfolio />
           </main>
           <footer className="w-full text-center py-8 text-sm bg-background">
