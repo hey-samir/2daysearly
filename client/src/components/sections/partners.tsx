@@ -10,7 +10,7 @@ interface PartnerCardProps {
   imageClassName?: string;
 }
 
-const PartnerCard = memo(({ name, bio, image }: PartnerCardProps) => (
+const PartnerCard = memo(({ name, bio, image, imageClassName }: PartnerCardProps) => (
   <div className="flex flex-col items-center space-y-4 p-6">
     <div className="w-48 h-48 rounded-full overflow-hidden bg-white shadow-lg">
       <Image
