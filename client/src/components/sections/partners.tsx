@@ -15,7 +15,7 @@ const PartnerCard = memo(({ name, bio, image }: PartnerCardProps) => (
       <Image
         src={image}
         alt={`${name}'s portrait`}
-        className="w-full h-full rounded-full object-contain"
+        className="w-full h-full rounded-full object-cover"
         fallbackSrc="/images/2-days-early-logo-2025.png"
       />
     </div>
