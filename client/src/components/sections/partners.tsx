@@ -28,17 +28,17 @@ const PartnerCard = memo(({ name, bio, image, imageClassName }: PartnerCardProps
 const partners = [
   {
     name: "Maia",
-    bio: "Maia builds cool fintech stuff at Chime (after they acquired her credit-building startup Pinch). Previously turned jewelry rental into an empire at Rocksbox (also acquired). Now backs other founders at XFactor & Parcel B while nerding out on fintech. Probably thinking about ramen right now.",
+    bio: "Builds cool fintech stuff at Chime (after they acquired her credit-building startup Pinch). Previously founded Rocksbox (also acquired). Now backs founders at XFactor & Parcel B. Probably thinking about ramen right now.",
     image: "/images/Maia.png"
   },
   {
     name: "Baishi",
-    bio: "At Chime, Baishi shapes lending products that help millions get the credit they deserve. Previously built tech to revolutionize mortgages at LendingHome and reimagined home search at Compass. Now building surprisingly great financial features while raising surprisingly great tiny humans.",
+    bio: "At Chime, shapes lending products helping millions get the credit they deserve. Previously revolutionized mortgages at LendingHome and home search at Compass. Building great fintech while raising tiny humans.",
     image: "/images/Baishi.png"
   },
   {
     name: "Samir",
-    bio: "Finance nerd turned fintech builder, Samir leads Financial Partnerships at Cash App, expanding money superpowers for millions. Previously shaped strategic finance at HRT, Unit, and Chime, after getting his start wrangling spreadsheets at JP Morgan. Writes over-engineered fintech takes and is learning to code at the speed of thought with Replit.",
+    bio: "Finance nerd building money superpowers at Cash App. Previously shaped fin strategy at HRT, Unit, and Chime after starting at JP Morgan. Writes over-engineered fintech takes and is learning to code at the speed of thought with Replit.",
     image: "/images/Samir-Desai-min.png",
     imageClassName: "scale-[0.8]"
   }
@@ -56,7 +56,7 @@ const Partners = () => {
           id="partners-heading"
           className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-12 text-center"
         >
-          Team
+          Partners
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {partners.map((partner) => (
