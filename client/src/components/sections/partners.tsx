@@ -1,4 +1,3 @@
-
 import { memo } from "react";
 import AnimatedSection from "@/components/ui/animated-section";
 import Image from "@/components/ui/image";
@@ -28,7 +27,7 @@ const PartnerCard = memo(({ name, bio, image, imageClassName }: PartnerCardProps
 const partners = [
   {
     name: "Maia",
-    bio: <>Builds cool fintech stuff at Chime (after they acquired her credit-building startup Pinch). Previously founded Rocksbox (also acquired). Now backs founders at XFactor & Parcel B. Probably <a href="https://x.com/maiab" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/90 underline">tmi tweets</a> about raising her two amazing daughers</>,
+    bio: <>Builds cool fintech stuff at Chime (after they acquired her credit-building startup Pinch). Previously founded Rocksbox (also acquired). Now backs founders at XFactor & Parcel B. Probably sharing <a href="https://x.com/maiab" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/90 underline">tmi tweets</a> about raising her two amazing daughers.</>,
     image: "/images/Maia.png"
   },
   {
