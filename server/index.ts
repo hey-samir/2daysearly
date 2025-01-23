@@ -90,12 +90,19 @@ const startServer = async () => {
     }
 
     const PORT = process.env.PORT || 3000;
-    server.listen(PORT, "0.0.0.0", () => {
-      log(`Server running at http://0.0.0.0:${PORT}`);
-      log('Server is ready to handle requests');
-    });
-
-    setupServerErrorHandling(server);
+    server.listen(PORT, "0.0.0.0")
+      .on('listening', () => {
+        log(`Server running at http://0.0.0.0:${PORT}`);
+        log('Server is ready to handle requests');
+      })
+      .on('error', (error) => {
+        if (error.code === 'EADDRINUSE') {
+          log('Port is busy, trying alternate port...');
+          server.listen(0, "0.0.0.0");
+        } else {
+          throw error;
+        }
+      });
   } catch (error) {
     console.error('Failed to start server:', error);
     process.exit(1);
