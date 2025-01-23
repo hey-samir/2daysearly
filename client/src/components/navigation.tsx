@@ -128,7 +128,7 @@ export default function Navigation() {
                 key={id}
                 href={`#${id}`} 
                 onClick={(e) => handleNavClick(e, id)} 
-                className={`relative text-gray-700 dark:text-gray-700 hover:text-primary dark:hover:text-primary rounded-md px-2 py-1 transition-all duration-200 transform hover:-translate-y-0.5 ${
+                className={`relative text-gray-700 dark:text-gray-700 hover:text-primary dark:hover:text-primary rounded-md px-1.5 py-1 text-sm md:text-base md:px-2 transition-all duration-200 transform hover:-translate-y-0.5 ${
                   activeSection === id ? 'text-primary dark:text-primary font-medium after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary' : ''
                 }`}
                 role="menuitem"
