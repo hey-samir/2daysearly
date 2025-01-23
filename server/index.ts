@@ -89,20 +89,27 @@ const startServer = async () => {
       serveStatic(app);
     }
 
-    const PORT = process.env.PORT || 3000;
-    server.listen(PORT, "0.0.0.0")
-      .on('listening', () => {
-        log(`Server running at http://0.0.0.0:${PORT}`);
-        log('Server is ready to handle requests');
-      })
-      .on('error', (error) => {
-        if (error.code === 'EADDRINUSE') {
-          log('Port is busy, trying alternate port...');
-          server.listen(0, "0.0.0.0");
-        } else {
-          throw error;
-        }
+    const tryPort = (port: number): Promise<void> => {
+      return new Promise((resolve, reject) => {
+        server.listen(port, "0.0.0.0")
+          .once('listening', () => {
+            log(`Server running at http://0.0.0.0:${port}`);
+            log('Server is ready to handle requests');
+            resolve();
+          })
+          .once('error', (error: NodeJS.ErrnoException) => {
+            if (error.code === 'EADDRINUSE') {
+              server.close();
+              resolve(tryPort(port + 1));
+            } else {
+              reject(error);
+            }
+          });
       });
+    };
+
+    const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
+    await tryPort(PORT);
   } catch (error) {
     console.error('Failed to start server:', error);
     process.exit(1);
