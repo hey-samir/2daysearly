@@ -5,7 +5,7 @@ import { IMAGES } from "@/lib/constants";
 
 export default function Hero() {
   return (
-    <section id="hero" className="w-full flex items-center justify-center bg-background pt-24 pb-8">
+    <section id="hero" className="w-full flex items-center justify-center bg-white pt-24 pb-8"> {/* Changed background to white */}
       <div className="container">
         <AnimatedSection className="text-center w-full max-w-3xl mx-auto" delay={0.2}>
           <div>

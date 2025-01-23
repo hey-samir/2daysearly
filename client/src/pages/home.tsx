@@ -30,8 +30,8 @@ export default function Home() {
             <MemoizedHero />
             <MemoizedPurpose />
             <MemoizedPrinciples />
-            <MemoizedPartners />
             <MemoizedPortfolio />
+            <MemoizedPartners />
           </main>
           <footer className="w-full text-center py-8 text-sm bg-background">
             <motion.p 

@@ -38,7 +38,7 @@ const Principles = () => {
   return (
     <section 
       id="principles" 
-      className="py-8 md:py-12 bg-gray-50 dark:bg-primary/5"
+      className="py-8 md:py-12 bg-white dark:bg-primary/10"
       aria-labelledby="principles-heading"
     >
       <AnimatedSection className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-0">
