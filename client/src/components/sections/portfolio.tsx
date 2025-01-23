@@ -6,7 +6,7 @@ export default function Portfolio() {
   return (
     <section 
       id="portfolio" 
-      className="min-h-[50vh] py-[5vh] md:py-[8vh] bg-gray-50 dark:bg-primary/5"
+      className="min-h-[50vh] py-[5vh] md:py-[8vh] bg-white dark:bg-primary/10"
       aria-labelledby="portfolio-heading"
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
