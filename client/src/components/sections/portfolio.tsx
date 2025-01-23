@@ -37,6 +37,24 @@ export default function Portfolio() {
               logo: IMAGES.companies.juno
             },
             {
+              name: "Harper",
+              href: "https://www.harperinsure.com/",
+              description: "Modern insurance platform enabling embedded insurance experiences for innovative businesses.",
+              logo: IMAGES.companies.harper
+            },
+            {
+              name: "Kartera",
+              href: "https://www.kartera.com",
+              description: "Empowering financial advisors with digital-first solutions to serve the next generation of wealth.",
+              logo: IMAGES.companies.kartera
+            },
+            {
+              name: "Sundae",
+              href: "https://www.sundae.com",
+              description: "Marketplace connecting homeowners looking to sell with property investors for fair, off-market deals.",
+              logo: IMAGES.companies.sundae
+            },
+            {
               name: "Waldo",
               href: "https://www.waldo.ai/",
               description: "AI-powered fraud prevention that automates compliance and keeps your business safe.",

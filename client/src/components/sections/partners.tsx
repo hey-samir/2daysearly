@@ -37,7 +37,7 @@ const partners = [
   },
   {
     name: "Samir",
-    bio: "Finance nerd building money superpowers at Cash App. Previously shaped fin strategy at HRT, Unit, and Chime after starting at JP Morgan. Writes over-engineered fintech takes and is learning to code at the speed of thought with Replit.",
+    bio: <>Finance nerd building money superpowers at Cash App. Previously shaped Strategic Finance at HRT, Unit, and Chime after starting at JP Morgan. Writes <a href="https://interspace.samir.xyz" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/90 underline">over-engineered fintech takes</a> and is learning to code at the speed of thought with Replit.</>,
     image: "/images/Samir-Desai-min.png",
     imageClassName: "scale-[0.8]"
   }

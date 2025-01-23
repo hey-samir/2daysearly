@@ -11,7 +11,10 @@ export const IMAGES = {
   companies: {
     placeholder: "/images/company-placeholder.png",
     backpack: "/images/backpack.png",
+    harper: "/images/harper.png",
     juno: "/images/juno.png",
+    kartera: "/images/kartera.png",
+    sundae: "/images/sundae.png",
     waldo: "/images/waldo.png"
   }
 } as const;
