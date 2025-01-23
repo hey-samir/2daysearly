@@ -90,8 +90,8 @@ const startServer = async () => {
     }
 
     const PORT = process.env.PORT || 5000;
-    server.listen(PORT, () => {
-      log(`Server running at http://localhost:${PORT}`);
+    server.listen(PORT, "0.0.0.0", () => {
+      log(`Server running at http://0.0.0.0:${PORT}`);
       log('Server is ready to handle requests');
     });
 
@@ -109,7 +109,7 @@ const setupServerErrorHandling = (server: Server) => {
       log('Address already in use, retrying...');
       setTimeout(() => {
         server.close();
-        server.listen(process.env.PORT || 5000);
+        server.listen(process.env.PORT || 5000, "0.0.0.0"); //Added 0.0.0.0 here as well for consistency
       }, 1000);
     }
   });
