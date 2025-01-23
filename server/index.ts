@@ -89,25 +89,11 @@ const startServer = async () => {
       serveStatic(app);
     }
 
-    const tryPorts = [5000, 3000, 8080];
-    let currentPortIndex = 0;
-
-    const tryListen = () => {
-      const PORT = process.env.PORT || tryPorts[currentPortIndex];
-      server.listen(PORT, "0.0.0.0", () => {
-        log(`Server running at http://0.0.0.0:${PORT}`);
-        log('Server is ready to handle requests');
-      }).on('error', (error: NodeJS.ErrnoException) => {
-        if (error.code === 'EADDRINUSE' && currentPortIndex < tryPorts.length - 1) {
-          currentPortIndex++;
-          tryListen();
-        } else {
-          throw error;
-        }
-      });
-    };
-
-    tryListen();
+    const PORT = process.env.PORT || 3000;
+    server.listen(PORT, "0.0.0.0", () => {
+      log(`Server running at http://0.0.0.0:${PORT}`);
+      log('Server is ready to handle requests');
+    });
 
     setupServerErrorHandling(server);
   } catch (error) {
