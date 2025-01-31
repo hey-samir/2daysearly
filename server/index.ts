@@ -12,11 +12,11 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Serve static files from attached_assets directory with proper path resolution
-app.use('/attached_assets', express.static(path.join(__dirname, '..', 'attached_assets')));
+// Serve static files from the correct dist/public directory
+app.use(express.static(path.join(__dirname, '..', 'dist', 'public')));
 
 interface ExtendedResponse extends Response {
-  json: (body: any, ...args: any[]) => Response;
+  json: (body: any) => Response;
 }
 
 // Middleware to log API requests
@@ -26,9 +26,9 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   let capturedJsonResponse: Record<string, any> | undefined = undefined;
 
   const originalResJson = res.json;
-  (res as ExtendedResponse).json = function (bodyJson: any, ...args: any[]) {
+  (res as ExtendedResponse).json = function (bodyJson: any) {
     capturedJsonResponse = bodyJson;
-    return originalResJson.apply(res, [bodyJson, ...args]);
+    return originalResJson.call(res, bodyJson);
   };
 
   res.on("finish", () => {
@@ -123,7 +123,7 @@ const setupServerErrorHandling = (server: Server) => {
       log('Address already in use, retrying...');
       setTimeout(() => {
         server.close();
-        server.listen(process.env.PORT || 5000, "0.0.0.0"); //Added 0.0.0.0 here as well for consistency
+        server.listen(process.env.PORT || 3000, "0.0.0.0");
       }, 1000);
     }
   });

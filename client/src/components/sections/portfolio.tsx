@@ -66,10 +66,10 @@ export default function Portfolio() {
               href={company.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative aspect-[3/1.5] bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+              className="group relative aspect-[3/1.5] bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
               role="listitem"
             >
-              <div className="absolute inset-0 flex items-center justify-center p-4">
+              <div className="absolute inset-0 flex items-center justify-center p-4 bg-white rounded-lg">
                 <div className="w-full h-full relative">
                   <Image 
                     src={company.logo}
