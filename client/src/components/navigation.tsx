@@ -4,15 +4,6 @@ import ThemeToggle from "@/components/ui/theme-toggle";
 import { scrollToElement, getActiveSection } from "@/lib/scroll";
 import { Separator } from "@/components/ui/separator";
 import Image from "@/components/ui/image";
-import { IMAGES } from "@/lib/constants";
-
-declare global {
-  interface Window {
-    Tally: {
-      openPopup: (formId: string, options?: any) => void;
-    };
-  }
-}
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,34 +35,19 @@ export default function Navigation() {
   const actionButtons = [
     { href: "https://interspace.samir.xyz/p/101-everything-you-wanted-to-know", label: "LEARN", primary: false },
     { 
-      href: "#",  
       label: "JOIN*", 
       primary: false,
-      isTallyForm: true,
-      formId: "nP1v8e"
+      attributes: {
+        "data-tally-open": "nP1v8e",
+        "data-tally-align-left": "1",
+        "data-tally-emoji-text": "👋",
+        "data-tally-emoji-animation": "wave",
+        "data-tally-width": "500",
+        "data-tally-overlay": "1"
+      }
     },
     { href: "mailto:pitch@daysearly.com", label: "PITCH", primary: true }
   ];
-
-  const handleButtonClick = (e: React.MouseEvent<HTMLAnchorElement>, button: any) => {
-    if (button.isTallyForm) {
-      e.preventDefault();
-      // Check if Tally is available
-      if (typeof window !== 'undefined' && window.Tally) {
-        window.Tally.openPopup(button.formId, {
-          layout: 'modal',
-          width: 500,
-          alignLeft: true,
-          emoji: {
-            text: '👋',
-            animation: 'wave'
-          }
-        });
-      } else {
-        console.error('Tally widget is not loaded yet');
-      }
-    }
-  };
 
   return (
     <nav 
@@ -118,20 +94,18 @@ export default function Navigation() {
 
             <div className="flex items-center gap-2">
               {actionButtons.map((button) => (
-                <a
+                <button
                   key={button.label}
-                  href={button.href}
-                  onClick={(e) => handleButtonClick(e, button)}
-                  target={button.href.startsWith('mailto:') ? undefined : "_blank"}
-                  rel="noopener noreferrer"
+                  {...(button.attributes || {})}
+                  onClick={button.href ? () => window.open(button.href, '_blank') : undefined}
                   className={`${
                     button.primary
                       ? 'bg-primary text-white hover:bg-primary/90'
                       : 'bg-gray-100 text-gray-900 dark:bg-gray-100 dark:text-gray-900 hover:bg-gray-200 dark:hover:bg-gray-200'
                   } px-3 py-1.5 rounded-md text-sm font-medium inline-flex items-center gap-1 transition-all duration-200 transform hover:-translate-y-0.5`}
                 >
-                  {button.label} {!button.isTallyForm && <ExternalLink className="h-3 w-3" />}
-                </a>
+                  {button.label} {button.href && <ExternalLink className="h-3 w-3" />}
+                </button>
               ))}
               <Separator orientation="vertical" className="h-6 mx-2" />
               <ThemeToggle />
@@ -178,20 +152,18 @@ export default function Navigation() {
 
           <div className="flex flex-wrap gap-2">
             {actionButtons.map((button) => (
-              <a
+              <button
                 key={button.label}
-                href={button.href}
-                onClick={(e) => handleButtonClick(e, button)}
-                target={button.href.startsWith('mailto:') ? undefined : "_blank"}
-                rel="noopener noreferrer"
+                {...(button.attributes || {})}
+                onClick={button.href ? () => window.open(button.href, '_blank') : undefined}
                 className={`${
                   button.primary
                     ? 'bg-primary text-white hover:bg-primary/90'
                     : 'bg-gray-100 text-gray-900 dark:bg-gray-100 dark:text-gray-900 hover:bg-gray-200 dark:hover:bg-gray-200'
                 } px-3 py-1.5 rounded-md text-sm font-medium inline-flex items-center gap-1 w-full justify-center transition-all duration-200 transform hover:-translate-y-0.5`}
               >
-                {button.label} {!button.isTallyForm && <ExternalLink className="h-3 w-3" />}
-              </a>
+                {button.label} {button.href && <ExternalLink className="h-3 w-3" />}
+              </button>
             ))}
             <div className="flex justify-center w-full pt-2">
               <ThemeToggle />
