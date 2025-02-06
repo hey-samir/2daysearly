@@ -35,7 +35,15 @@ export default function Navigation() {
 
   const actionButtons = [
     { href: "https://interspace.samir.xyz/p/101-everything-you-wanted-to-know", label: "LEARN", primary: false },
-    { href: "https://tally.so/r/nP1v8e", label: "JOIN*", primary: false },
+    { 
+      href: "#",  
+      label: "JOIN*", 
+      primary: false,
+      'data-tally-open': "nP1v8e",
+      'data-tally-align-left': "1",
+      'data-tally-emoji-text': "👋",
+      'data-tally-emoji-animation': "wave"
+    },
     { href: "mailto:pitch@daysearly.com", label: "PITCH", primary: true }
   ];
 
