@@ -71,36 +71,57 @@ export default function Navigation() {
       return;
     }
 
-    // Create an iframe for embedded form
+    // Create a container for the form
     const formContainer = document.createElement('div');
     formContainer.id = 'tally-form-container';
     formContainer.style.position = 'fixed';
-    formContainer.style.top = '50%';
-    formContainer.style.left = '50%';
-    formContainer.style.transform = 'translate(-50%, -50%)';
-    formContainer.style.zIndex = '9999';
+    formContainer.style.top = '0';
+    formContainer.style.right = '0';
+    formContainer.style.height = '100vh';
+    formContainer.style.width = '600px';
+    formContainer.style.maxWidth = '100vw';
     formContainer.style.backgroundColor = 'white';
-    formContainer.style.padding = '20px';
-    formContainer.style.borderRadius = '12px';
-    formContainer.style.boxShadow = '0 4px 6px -1px rgb(0 0 0 / 0.1)';
-    formContainer.style.maxWidth = '90vw';
-    formContainer.style.maxHeight = '90vh';
-    formContainer.style.overflow = 'auto';
+    formContainer.style.boxShadow = '-4px 0 6px -1px rgb(0 0 0 / 0.1)';
+    formContainer.style.zIndex = '9999';
+    formContainer.style.transform = 'translateX(100%)';
+    formContainer.style.transition = 'transform 0.3s ease-in-out';
+
+    // Add title
+    const titleContainer = document.createElement('div');
+    titleContainer.style.padding = '1.5rem';
+    titleContainer.style.borderBottom = '1px solid #e5e7eb';
+    titleContainer.style.display = 'flex';
+    titleContainer.style.justifyContent = 'space-between';
+    titleContainer.style.alignItems = 'center';
+
+    const title = document.createElement('h2');
+    title.textContent = '2 Days Early Syndicate Onboarding';
+    title.style.margin = '0';
+    title.style.fontSize = '1.25rem';
+    title.style.fontWeight = '600';
 
     // Add close button
     const closeButton = document.createElement('button');
     closeButton.innerHTML = '×';
-    closeButton.style.position = 'absolute';
-    closeButton.style.right = '10px';
-    closeButton.style.top = '10px';
     closeButton.style.fontSize = '24px';
     closeButton.style.border = 'none';
     closeButton.style.background = 'none';
     closeButton.style.cursor = 'pointer';
-    closeButton.onclick = () => {
-      document.body.removeChild(formContainer);
-      document.body.style.overflow = 'auto';
+    closeButton.style.padding = '0.5rem';
+    closeButton.style.lineHeight = '1';
+
+    const cleanup = () => {
+      if (document.body.contains(formContainer)) {
+        formContainer.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+          document.body.removeChild(formContainer);
+          document.body.removeChild(overlay);
+          document.body.style.overflow = 'auto';
+        }, 300);
+      }
     };
+
+    closeButton.onclick = cleanup;
 
     // Add overlay
     const overlay = document.createElement('div');
@@ -111,21 +132,34 @@ export default function Navigation() {
     overlay.style.height = '100%';
     overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
     overlay.style.zIndex = '9998';
-    overlay.onclick = closeButton.onclick;
+    overlay.style.opacity = '0';
+    overlay.style.transition = 'opacity 0.3s ease-in-out';
+    overlay.onclick = cleanup;
 
     // Create embedded form
     const iframe = document.createElement('iframe');
-    iframe.src = `https://tally.so/embed/${window.TallyConfig?.formId || 'nP1v8e'}?alignLeft=1&hideTitle=1&transparentBackground=1`;
-    iframe.width = '500';
-    iframe.height = '600';
+    iframe.src = `https://tally.so/embed/${window.TallyConfig?.formId || 'nP1v8e'}?alignLeft=1&transparentBackground=1`;
+    iframe.style.width = '100%';
+    iframe.style.height = 'calc(100% - 5rem)'; // Subtract header height
     iframe.style.border = 'none';
-    iframe.title = "Join 2 Days Early";
+    iframe.title = "2 Days Early Syndicate Onboarding";
 
-    formContainer.appendChild(closeButton);
+    // Assemble the components
+    titleContainer.appendChild(title);
+    titleContainer.appendChild(closeButton);
+    formContainer.appendChild(titleContainer);
     formContainer.appendChild(iframe);
+
+    // Add to document
     document.body.appendChild(overlay);
     document.body.appendChild(formContainer);
     document.body.style.overflow = 'hidden';
+
+    // Trigger animations
+    requestAnimationFrame(() => {
+      overlay.style.opacity = '1';
+      formContainer.style.transform = 'translateX(0)';
+    });
   };
 
   const navItems = [
