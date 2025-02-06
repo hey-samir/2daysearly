@@ -6,6 +6,14 @@ import { Separator } from "@/components/ui/separator";
 import Image from "@/components/ui/image";
 import { IMAGES } from "@/lib/constants";
 
+declare global {
+  interface Window {
+    Tally: {
+      openPopup: (formId: string, options?: any) => void;
+    };
+  }
+}
+
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -39,13 +47,31 @@ export default function Navigation() {
       href: "#",  
       label: "JOIN*", 
       primary: false,
-      'data-tally-open': "nP1v8e",
-      'data-tally-align-left': "1",
-      'data-tally-emoji-text': "👋",
-      'data-tally-emoji-animation': "wave"
+      isTallyForm: true,
+      formId: "nP1v8e"
     },
     { href: "mailto:pitch@daysearly.com", label: "PITCH", primary: true }
   ];
+
+  const handleButtonClick = (e: React.MouseEvent<HTMLAnchorElement>, button: any) => {
+    if (button.isTallyForm) {
+      e.preventDefault();
+      // Check if Tally is available
+      if (typeof window !== 'undefined' && window.Tally) {
+        window.Tally.openPopup(button.formId, {
+          layout: 'modal',
+          width: 500,
+          alignLeft: true,
+          emoji: {
+            text: '👋',
+            animation: 'wave'
+          }
+        });
+      } else {
+        console.error('Tally widget is not loaded yet');
+      }
+    }
+  };
 
   return (
     <nav 
@@ -91,19 +117,20 @@ export default function Navigation() {
             <Separator orientation="vertical" className="h-6 mx-2" />
 
             <div className="flex items-center gap-2">
-              {actionButtons.map(({ href, label, primary }) => (
+              {actionButtons.map((button) => (
                 <a
-                  key={label}
-                  href={href}
-                  target={href.startsWith('mailto:') ? undefined : "_blank"}
+                  key={button.label}
+                  href={button.href}
+                  onClick={(e) => handleButtonClick(e, button)}
+                  target={button.href.startsWith('mailto:') ? undefined : "_blank"}
                   rel="noopener noreferrer"
                   className={`${
-                    primary
+                    button.primary
                       ? 'bg-primary text-white hover:bg-primary/90'
                       : 'bg-gray-100 text-gray-900 dark:bg-gray-100 dark:text-gray-900 hover:bg-gray-200 dark:hover:bg-gray-200'
                   } px-3 py-1.5 rounded-md text-sm font-medium inline-flex items-center gap-1 transition-all duration-200 transform hover:-translate-y-0.5`}
                 >
-                  {label} <ExternalLink className="h-3 w-3" />
+                  {button.label} {!button.isTallyForm && <ExternalLink className="h-3 w-3" />}
                 </a>
               ))}
               <Separator orientation="vertical" className="h-6 mx-2" />
@@ -150,19 +177,20 @@ export default function Navigation() {
           <Separator className="my-2" />
 
           <div className="flex flex-wrap gap-2">
-            {actionButtons.map(({ href, label, primary }) => (
+            {actionButtons.map((button) => (
               <a
-                key={label}
-                href={href}
-                target={href.startsWith('mailto:') ? undefined : "_blank"}
+                key={button.label}
+                href={button.href}
+                onClick={(e) => handleButtonClick(e, button)}
+                target={button.href.startsWith('mailto:') ? undefined : "_blank"}
                 rel="noopener noreferrer"
                 className={`${
-                  primary
+                  button.primary
                     ? 'bg-primary text-white hover:bg-primary/90'
                     : 'bg-gray-100 text-gray-900 dark:bg-gray-100 dark:text-gray-900 hover:bg-gray-200 dark:hover:bg-gray-200'
                 } px-3 py-1.5 rounded-md text-sm font-medium inline-flex items-center gap-1 w-full justify-center transition-all duration-200 transform hover:-translate-y-0.5`}
               >
-                {label} <ExternalLink className="h-3 w-3" />
+                {button.label} {!button.isTallyForm && <ExternalLink className="h-3 w-3" />}
               </a>
             ))}
             <div className="flex justify-center w-full pt-2">
