@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '..', 'dist', 'public')));
 
 interface ExtendedResponse extends Response {
-  json: (body: any) => Response;
+  json: (body: any) => this;
 }
 
 // Middleware to log API requests
@@ -108,7 +108,8 @@ const startServer = async () => {
       });
     };
 
-    const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
+    // Changed default port to 5000
+    const PORT = process.env.PORT ? parseInt(process.env.PORT) : 5000;
     await tryPort(PORT);
   } catch (error) {
     console.error('Failed to start server:', error);
@@ -123,7 +124,8 @@ const setupServerErrorHandling = (server: Server) => {
       log('Address already in use, retrying...');
       setTimeout(() => {
         server.close();
-        server.listen(process.env.PORT || 3000, "0.0.0.0");
+        const PORT = process.env.PORT ? parseInt(process.env.PORT) : 5000;
+        server.listen(PORT, "0.0.0.0");
       }, 1000);
     }
   });

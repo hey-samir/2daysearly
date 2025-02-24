@@ -10,7 +10,7 @@ export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
-  const [isTallyLoading, setIsTallyLoading] = useState(true);
+  const [isTallyLoading, setIsTallyLoading] = useState(false); // Changed to false by default
   const { toast } = useToast();
 
   useEffect(() => {
@@ -20,19 +20,7 @@ export default function Navigation() {
     };
     window.addEventListener("scroll", handleScroll);
 
-    // Check if Tally script is loaded
-    const checkTallyLoaded = () => {
-      if (window.Tally) {
-        setIsTallyLoading(false);
-        return;
-      }
-      setIsTallyLoading(true);
-    };
-
-    // Check immediately
-    checkTallyLoaded();
-
-    // Listen for script load event
+    // Only check Tally when needed, not on initial load
     const handleTallyLoad = () => {
       setIsTallyLoading(false);
     };
@@ -53,21 +41,16 @@ export default function Navigation() {
 
   const handleJoinClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    setIsTallyLoading(true); // Set loading when attempting to open form
 
-    if (isTallyLoading) {
-      toast({
-        title: "Form is loading",
-        description: "Please wait a moment while we load the form.",
-      });
-      return;
-    }
-
+    // Check if Tally is available
     if (!window.Tally) {
       toast({
         variant: "destructive",
         title: "Error loading form",
         description: "Please refresh the page and try again.",
       });
+      setIsTallyLoading(false);
       return;
     }
 
@@ -143,7 +126,6 @@ export default function Navigation() {
     titleContainer.appendChild(closeButton);
     formContainer.appendChild(titleContainer);
     formContainer.appendChild(iframe);
-
 
     // Add overlay
     const overlay = document.createElement('div');
