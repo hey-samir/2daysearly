@@ -86,7 +86,7 @@ export default function Navigation() {
     formContainer.style.transform = 'translateX(100%)';
     formContainer.style.transition = 'transform 0.3s ease-in-out';
 
-    // Add title
+    // Add title container
     const titleContainer = document.createElement('div');
     titleContainer.style.padding = '1.5rem';
     titleContainer.style.borderBottom = '1px solid #e5e7eb';
@@ -99,6 +99,7 @@ export default function Navigation() {
     title.style.margin = '0';
     title.style.fontSize = '1.25rem';
     title.style.fontWeight = '600';
+    title.style.color = '#111827';
 
     // Add close button
     const closeButton = document.createElement('button');
@@ -123,6 +124,27 @@ export default function Navigation() {
 
     closeButton.onclick = cleanup;
 
+    // Create embedded form
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://tally.so/embed/${window.TallyConfig?.formId || 'nP1v8e'}?alignLeft=1&transparentBackground=1&hideTitle=1`;
+    iframe.style.width = '100%';
+    iframe.style.height = 'calc(100% - 5rem)';
+    iframe.style.border = 'none';
+    iframe.style.padding = '1.5rem';
+    iframe.title = "2 Days Early Syndicate Onboarding";
+
+    // Remove loading indicator when iframe loads
+    iframe.onload = () => {
+      setIsTallyLoading(false);
+    };
+
+    // Assemble the components
+    titleContainer.appendChild(title);
+    titleContainer.appendChild(closeButton);
+    formContainer.appendChild(titleContainer);
+    formContainer.appendChild(iframe);
+
+
     // Add overlay
     const overlay = document.createElement('div');
     overlay.style.position = 'fixed';
@@ -135,20 +157,6 @@ export default function Navigation() {
     overlay.style.opacity = '0';
     overlay.style.transition = 'opacity 0.3s ease-in-out';
     overlay.onclick = cleanup;
-
-    // Create embedded form
-    const iframe = document.createElement('iframe');
-    iframe.src = `https://tally.so/embed/${window.TallyConfig?.formId || 'nP1v8e'}?alignLeft=1&transparentBackground=1`;
-    iframe.style.width = '100%';
-    iframe.style.height = 'calc(100% - 5rem)'; // Subtract header height
-    iframe.style.border = 'none';
-    iframe.title = "2 Days Early Syndicate Onboarding";
-
-    // Assemble the components
-    titleContainer.appendChild(title);
-    titleContainer.appendChild(closeButton);
-    formContainer.appendChild(titleContainer);
-    formContainer.appendChild(iframe);
 
     // Add to document
     document.body.appendChild(overlay);
@@ -171,8 +179,8 @@ export default function Navigation() {
 
   const actionButtons = [
     { href: "https://interspace.samir.xyz/p/101-everything-you-wanted-to-know", label: "LEARN", primary: false },
-    { 
-      label: isTallyLoading ? "Loading..." : "JOIN*", 
+    {
+      label: isTallyLoading ? "Loading..." : "JOIN*",
       primary: false,
       onClick: handleJoinClick,
       icon: isTallyLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : undefined
@@ -181,7 +189,7 @@ export default function Navigation() {
   ];
 
   return (
-    <nav 
+    <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 bg-[#baf5da]/80 dark:bg-white/80 backdrop-blur-sm
         ${isScrolled ? 'shadow-sm' : ''}
         md:top-4 md:mx-4 md:rounded-full`}
@@ -190,14 +198,14 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <a 
-            href="#hero" 
-            onClick={(e) => handleNavClick(e, 'hero')} 
+          <a
+            href="#hero"
+            onClick={(e) => handleNavClick(e, 'hero')}
             className="flex-shrink-0 transform hover:scale-105 transition-transform duration-200"
           >
-            <Image 
+            <Image
               src="/images/2-days-early-calendar-icon-2025.png"
-              alt="2 Days Early" 
+              alt="2 Days Early"
               className="h-12 w-12 rounded-full object-contain"
               fallbackSrc="/images/2-days-early-logo-2025.png"
             />
@@ -208,8 +216,8 @@ export default function Navigation() {
               {navItems.map(({ id, label }) => (
                 <a
                   key={id}
-                  href={`#${id}`} 
-                  onClick={(e) => handleNavClick(e, id)} 
+                  href={`#${id}`}
+                  onClick={(e) => handleNavClick(e, id)}
                   className={`relative text-gray-700 dark:text-gray-700 hover:text-primary dark:hover:text-primary rounded-md px-2 py-1 transition-all duration-200 transform hover:-translate-y-0.5 ${
                     activeSection === id ? 'text-primary dark:text-primary font-medium after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary' : ''
                   }`}
@@ -255,7 +263,7 @@ export default function Navigation() {
         </div>
       </div>
 
-      <div 
+      <div
         id="mobile-menu"
         className={`md:hidden ${isOpen ? 'block' : 'hidden'} bg-[#baf5da]/95 dark:bg-white/95 backdrop-blur-sm`}
         role="menu"
@@ -266,8 +274,8 @@ export default function Navigation() {
             {navItems.map(({ id, label }) => (
               <a
                 key={id}
-                href={`#${id}`} 
-                onClick={(e) => handleNavClick(e, id)} 
+                href={`#${id}`}
+                onClick={(e) => handleNavClick(e, id)}
                 className={`relative text-gray-700 dark:text-gray-700 hover:text-primary dark:hover:text-primary rounded-md px-1.5 py-1 text-sm md:text-base md:px-2 transition-all duration-200 transform hover:-translate-y-0.5 ${
                   activeSection === id ? 'text-primary dark:text-primary font-medium after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary' : ''
                 }`}
